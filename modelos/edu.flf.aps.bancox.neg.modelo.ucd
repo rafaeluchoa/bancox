@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="edu.flf.aps.bancox.neg.modelo" size="1754,729" id="edu.flf.aps.bancox.domain" metadata="uml2-1.0" initialized="true" zoom="2.0" scrolledX="1257" scrolledY="894" tag="1000" key="32303037303533312D313030302062616E636F782F72616661656C7563686F61">
+  <children xsi:type="editmodel:ClassEditModel" name="Acesso" location="480,450" size="144,289" id="edu.flf.aps.bancox.domain/Acesso" runTimeClassModel="dtGeracao,pessoa,setDtExpiracao(Ljava.sql.Timestamp;),setDtGeracao(Ljava.sql.Timestamp;),senha,getDtGeracao(),getSenha(),id,getDtExpiracao(),setPessoa(Ledu.flf.aps.bancox.domain.Pessoa;),getId(),setId(Ljava.lang.Long;),setSenha(Ljava.lang.String;),dtExpiracao,getPessoa()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,80">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Acesso#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pessoa" id="edu.flf.aps.bancox.domain/Acesso#pessoa"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="senha" id="edu.flf.aps.bancox.domain/Acesso#senha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dtGeracao" id="edu.flf.aps.bancox.domain/Acesso#dtGeracao"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dtExpiracao" id="edu.flf.aps.bancox.domain/Acesso#dtExpiracao"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,160">
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Acesso#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Acesso#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPessoa" id="edu.flf.aps.bancox.domain/Acesso#getPessoa()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPessoa" id="edu.flf.aps.bancox.domain/Acesso#setPessoa(Ledu.flf.aps.bancox.domain.Pessoa;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSenha" id="edu.flf.aps.bancox.domain/Acesso#getSenha()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSenha" id="edu.flf.aps.bancox.domain/Acesso#setSenha(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDtGeracao" id="edu.flf.aps.bancox.domain/Acesso#getDtGeracao()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDtGeracao" id="edu.flf.aps.bancox.domain/Acesso#setDtGeracao(Ljava.sql.Timestamp;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDtExpiracao" id="edu.flf.aps.bancox.domain/Acesso#getDtExpiracao()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDtExpiracao" id="edu.flf.aps.bancox.domain/Acesso#setDtExpiracao(Ljava.sql.Timestamp;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Acesso-Soyatec::Import->edu.flf.aps.bancox.domain/Pessoa" source="//@children.0" target="//@children.8" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="144,112" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,127"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.0" name="Agencia" location="1064,243" size="128,241" id="edu.flf.aps.bancox.domain/Agencia" runTimeClassModel="id,getId(),getEndereco(),setId(Ljava.lang.Long;),setEndereco(Ledu.flf.aps.bancox.domain.Endereco;),getNome(),setNome(Ljava.lang.String;),nome,setNumero(Ljava.lang.String;),getNumero(),endereco,numero">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,64">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Agencia#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="edu.flf.aps.bancox.domain/Agencia#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numero" id="edu.flf.aps.bancox.domain/Agencia#numero"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="endereco" id="edu.flf.aps.bancox.domain/Agencia#endereco"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="81,128">
+      <children xsi:type="editmodel:MethodEditModel" name="getEndereco" id="edu.flf.aps.bancox.domain/Agencia#getEndereco()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEndereco" id="edu.flf.aps.bancox.domain/Agencia#setEndereco(Ledu.flf.aps.bancox.domain.Endereco;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="edu.flf.aps.bancox.domain/Agencia#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNome" id="edu.flf.aps.bancox.domain/Agencia#setNome(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumero" id="edu.flf.aps.bancox.domain/Agencia#getNumero()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumero" id="edu.flf.aps.bancox.domain/Agencia#setNumero(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Agencia#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Agencia#setId(Ljava.lang.Long;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Agencia-Soyatec::Import->edu.flf.aps.bancox.domain/Endereco" source="//@children.1" target="//@children.15" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,120" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="100,129"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Saldo" location="1544,270" size="60,29" id="edu.flf.aps.bancox.domain/Saldo" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Transacao&lt;-edu.flf.aps.bancox.domain/Saldo" source="//@children.2" target="//@children.11" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,41"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ContaCorrente" location="1394,883" size="115,29" id="edu.flf.aps.bancox.domain/ContaCorrente" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.3" target="//@children.13/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ContaPoupanca" location="1229,883" size="124,29" id="edu.flf.aps.bancox.domain/ContaPoupanca" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.4" target="//@children.13/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="62,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Emprestimo" location="1665,243" size="123,193" id="edu.flf.aps.bancox.domain/Emprestimo" runTimeClassModel="isAprovado(),valor,setQtdeParcelas(I),qtdeParcelas,getQtdeParcelas(),setAprovado(Z),aprovado,getValor(),setValor(F)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,48">
+      <children xsi:type="editmodel:AttributeEditModel" name="valor" id="edu.flf.aps.bancox.domain/Emprestimo#valor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="qtdeParcelas" id="edu.flf.aps.bancox.domain/Emprestimo#qtdeParcelas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="aprovado" id="edu.flf.aps.bancox.domain/Emprestimo#aprovado"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,96">
+      <children xsi:type="editmodel:MethodEditModel" name="getValor" id="edu.flf.aps.bancox.domain/Emprestimo#getValor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setValor" id="edu.flf.aps.bancox.domain/Emprestimo#setValor(F)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQtdeParcelas" id="edu.flf.aps.bancox.domain/Emprestimo#getQtdeParcelas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setQtdeParcelas" id="edu.flf.aps.bancox.domain/Emprestimo#setQtdeParcelas(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAprovado" id="edu.flf.aps.bancox.domain/Emprestimo#isAprovado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAprovado" id="edu.flf.aps.bancox.domain/Emprestimo#setAprovado(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Transacao&lt;-edu.flf.aps.bancox.domain/Emprestimo" source="//@children.5" target="//@children.11" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,96" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,96"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Extrato" location="1539,349" size="68,29" id="edu.flf.aps.bancox.domain/Extrato" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.flf.aps.bancox.domain/Transacao&lt;-edu.flf.aps.bancox.domain/Extrato" source="//@children.6" target="//@children.11" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-1,12" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,118"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Pagamento" location="1680,545" size="129,97" id="edu.flf.aps.bancox.domain/Pagamento" runTimeClassModel="getCodigoBarras(),setCodigoBarras(Ljava.lang.String;),codigoBarras">
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,16">
+      <children xsi:type="editmodel:AttributeEditModel" name="codigoBarras" id="edu.flf.aps.bancox.domain/Pagamento#codigoBarras"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,32">
+      <children xsi:type="editmodel:MethodEditModel" name="getCodigoBarras" id="edu.flf.aps.bancox.domain/Pagamento#getCodigoBarras()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCodigoBarras" id="edu.flf.aps.bancox.domain/Pagamento#setCodigoBarras(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.flf.aps.bancox.domain/Transacao&lt;-edu.flf.aps.bancox.domain/Pagamento" source="//@children.7" target="//@children.11" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,-1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,205"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.9/@sourceConnections.0 //@children.10/@sourceConnections.0 //@children.16/@sourceConnections.1" name="Pessoa" location="719,435" size="128,241" id="edu.flf.aps.bancox.domain/Pessoa" runTimeClassModel="id,getEmail(),getId(),email,getEndereco(),setEmail(Ljava.lang.String;),setId(Ljava.lang.Long;),setEndereco(Ledu.flf.aps.bancox.domain.Endereco;),getNome(),setNome(Ljava.lang.String;),nome,endereco">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,64">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Pessoa#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="edu.flf.aps.bancox.domain/Pessoa#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="email" id="edu.flf.aps.bancox.domain/Pessoa#email"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="endereco" id="edu.flf.aps.bancox.domain/Pessoa#endereco"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="81,128">
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="edu.flf.aps.bancox.domain/Pessoa#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNome" id="edu.flf.aps.bancox.domain/Pessoa#setNome(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEndereco" id="edu.flf.aps.bancox.domain/Pessoa#getEndereco()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEndereco" id="edu.flf.aps.bancox.domain/Pessoa#setEndereco(Ledu.flf.aps.bancox.domain.Endereco;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Pessoa#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Pessoa#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEmail" id="edu.flf.aps.bancox.domain/Pessoa#getEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEmail" id="edu.flf.aps.bancox.domain/Pessoa#setEmail(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Pessoa-Soyatec::Import->edu.flf.aps.bancox.domain/Endereco" source="//@children.8" target="//@children.15" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="128,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,268"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PessoaFisica" location="780,778" size="105,145" id="edu.flf.aps.bancox.domain/PessoaFisica" runTimeClassModel="setRg(Ljava.lang.String;),setCpf(Ljava.lang.String;),getCpf(),getRg(),rg,cpf">
+    <children xsi:type="editmodel:CompartmentEditModel" size="57,32">
+      <children xsi:type="editmodel:AttributeEditModel" name="rg" id="edu.flf.aps.bancox.domain/PessoaFisica#rg"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cpf" id="edu.flf.aps.bancox.domain/PessoaFisica#cpf"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,64">
+      <children xsi:type="editmodel:MethodEditModel" name="getRg" id="edu.flf.aps.bancox.domain/PessoaFisica#getRg()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRg" id="edu.flf.aps.bancox.domain/PessoaFisica#setRg(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCpf" id="edu.flf.aps.bancox.domain/PessoaFisica#getCpf()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCpf" id="edu.flf.aps.bancox.domain/PessoaFisica#setCpf(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.flf.aps.bancox.domain/Pessoa&lt;-edu.flf.aps.bancox.domain/PessoaFisica" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="58,240" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PessoaJuridica" location="585,779" size="121,145" id="edu.flf.aps.bancox.domain/PessoaJuridica" runTimeClassModel="getCnpj(),setRazaoSocial(Ljava.lang.String;),setCnpj(Ljava.lang.String;),getRazaoSocial(),razaoSocial,cnpj">
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,32">
+      <children xsi:type="editmodel:AttributeEditModel" name="cnpj" id="edu.flf.aps.bancox.domain/PessoaJuridica#cnpj"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="razaoSocial" id="edu.flf.aps.bancox.domain/PessoaJuridica#razaoSocial"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,64">
+      <children xsi:type="editmodel:MethodEditModel" name="getCnpj" id="edu.flf.aps.bancox.domain/PessoaJuridica#getCnpj()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCnpj" id="edu.flf.aps.bancox.domain/PessoaJuridica#setCnpj(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRazaoSocial" id="edu.flf.aps.bancox.domain/PessoaJuridica#getRazaoSocial()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRazaoSocial" id="edu.flf.aps.bancox.domain/PessoaJuridica#setRazaoSocial(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="edu.flf.aps.bancox.domain/Pessoa&lt;-edu.flf.aps.bancox.domain/PessoaJuridica" source="//@children.10" target="//@children.8" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="38,240" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.6/@sourceConnections.0 //@children.7/@sourceConnections.0" name="Transacao" location="1317,243" size="139,241" id="edu.flf.aps.bancox.domain/Transacao" runTimeClassModel="setSaldoAnterior(D),id,getId(),getData(),setId(Ljava.lang.Long;),data,saldoAnterior,getOrigem(),setData(Ljava.sql.Timestamp;),setOrigem(Ledu.flf.aps.bancox.domain.ContaBancaria;),origem,getSaldoAnterior()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,64">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Transacao#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="data" location="-25,31" id="edu.flf.aps.bancox.domain/Transacao#data"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origem" id="edu.flf.aps.bancox.domain/Transacao#origem"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="saldoAnterior" id="edu.flf.aps.bancox.domain/Transacao#saldoAnterior"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,128">
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Transacao#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Transacao#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getData" id="edu.flf.aps.bancox.domain/Transacao#getData()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setData" id="edu.flf.aps.bancox.domain/Transacao#setData(Ljava.sql.Timestamp;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOrigem" id="edu.flf.aps.bancox.domain/Transacao#getOrigem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setOrigem" id="edu.flf.aps.bancox.domain/Transacao#setOrigem(Ledu.flf.aps.bancox.domain.ContaBancaria;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSaldoAnterior" id="edu.flf.aps.bancox.domain/Transacao#getSaldoAnterior()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSaldoAnterior" id="edu.flf.aps.bancox.domain/Transacao#setSaldoAnterior(D)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Transacao-Soyatec::Import->edu.flf.aps.bancox.domain/ContaBancaria" source="//@children.11" target="//@children.14" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="6,241" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="109,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Transferencia" location="1485,546" size="142,97" id="edu.flf.aps.bancox.domain/Transferencia" runTimeClassModel="destino,setDestino(Ledu.flf.aps.bancox.domain.ContaBancaria;),getDestino()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,16">
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="edu.flf.aps.bancox.domain/Transferencia#destino"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="71,32">
+      <children xsi:type="editmodel:MethodEditModel" name="getDestino" id="edu.flf.aps.bancox.domain/Transferencia#getDestino()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDestino" id="edu.flf.aps.bancox.domain/Transferencia#setDestino(Ledu.flf.aps.bancox.domain.ContaBancaria;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Transacao&lt;-edu.flf.aps.bancox.domain/Transferencia" source="//@children.12" target="//@children.11" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,231"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Transferencia-Soyatec::Import->edu.flf.aps.bancox.domain/ContaBancaria" source="//@children.12" target="//@children.14" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,48" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="117,55"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ContaSalario" location="1075,884" size="106,29" id="edu.flf.aps.bancox.domain/ContaSalario" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" source="//@children.13" target="//@children.14" targetEnd="//@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.13/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="53,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,288" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true" showPrivateInnerClasses="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.13/@sourceConnections.0 //@children.12/@sourceConnections.1 //@children.16/@sourceConnections.0 //@children.11/@sourceConnections.0" name="ContaBancaria" location="1214,539" size="117,289" id="edu.flf.aps.bancox.domain/ContaBancaria" runTimeClassModel="getSaldo(),setTitular(Ledu.flf.aps.bancox.domain.Cliente;),getNumero(),saldo,numero,setAgencia(Ledu.flf.aps.bancox.domain.Agencia;),getTitular(),id,agencia,getAgencia(),getId(),setId(Ljava.lang.Long;),titular,setSaldo(D),setNumero(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,80">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/ContaBancaria#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="titular" id="edu.flf.aps.bancox.domain/ContaBancaria#titular"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="agencia" id="edu.flf.aps.bancox.domain/ContaBancaria#agencia"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numero" id="edu.flf.aps.bancox.domain/ContaBancaria#numero"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="saldo" id="edu.flf.aps.bancox.domain/ContaBancaria#saldo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="75,160">
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/ContaBancaria#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/ContaBancaria#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTitular" id="edu.flf.aps.bancox.domain/ContaBancaria#getTitular()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTitular" id="edu.flf.aps.bancox.domain/ContaBancaria#setTitular(Ledu.flf.aps.bancox.domain.Cliente;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAgencia" id="edu.flf.aps.bancox.domain/ContaBancaria#getAgencia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAgencia" id="edu.flf.aps.bancox.domain/ContaBancaria#setAgencia(Ledu.flf.aps.bancox.domain.Agencia;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumero" id="edu.flf.aps.bancox.domain/ContaBancaria#getNumero()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumero" id="edu.flf.aps.bancox.domain/ContaBancaria#setNumero(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSaldo" id="edu.flf.aps.bancox.domain/ContaBancaria#getSaldo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSaldo" id="edu.flf.aps.bancox.domain/ContaBancaria#setSaldo(D)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/ContaBancaria-Soyatec::Import->edu.flf.aps.bancox.domain/Agencia" source="//@children.14" target="//@children.1" targetEnd="//@children.14/@sourceConnections.0/@children.2" label="//@children.14/@sourceConnections.0/@children.0" sourceEnd="//@children.14/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="118,241"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.8/@sourceConnections.0" name="Endereco" location="900,234" size="100,337" id="edu.flf.aps.bancox.domain/Endereco" runTimeClassModel="setEstado(Ljava.lang.String;),setRua(Ljava.lang.String;),getRua(),getNumero(),getBairro(),numero,id,setBairro(Ljava.lang.String;),getCidade(),cidade,bairro,estado,getId(),rua,setId(Ljava.lang.Long;),setCidade(Ljava.lang.String;),setNumero(Ljava.lang.String;),getEstado()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,96">
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Endereco#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rua" id="edu.flf.aps.bancox.domain/Endereco#rua"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bairro" id="edu.flf.aps.bancox.domain/Endereco#bairro"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numero" id="edu.flf.aps.bancox.domain/Endereco#numero"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cidade" id="edu.flf.aps.bancox.domain/Endereco#cidade"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estado" id="edu.flf.aps.bancox.domain/Endereco#estado"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,192">
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Endereco#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Endereco#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRua" id="edu.flf.aps.bancox.domain/Endereco#getRua()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRua" id="edu.flf.aps.bancox.domain/Endereco#setRua(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBairro" id="edu.flf.aps.bancox.domain/Endereco#getBairro()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setBairro" id="edu.flf.aps.bancox.domain/Endereco#setBairro(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumero" id="edu.flf.aps.bancox.domain/Endereco#getNumero()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumero" id="edu.flf.aps.bancox.domain/Endereco#setNumero(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCidade" id="edu.flf.aps.bancox.domain/Endereco#getCidade()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCidade" id="edu.flf.aps.bancox.domain/Endereco#setCidade(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEstado" id="edu.flf.aps.bancox.domain/Endereco#getEstado()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEstado" id="edu.flf.aps.bancox.domain/Endereco#setEstado(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Cliente" location="930,602" size="169,193" id="edu.flf.aps.bancox.domain/Cliente" runTimeClassModel="id,setContas(Ljava.util.List;),setPessoa(Ledu.flf.aps.bancox.domain.Pessoa;),getContas(),getId(),setId(Ljava.lang.Long;),pessoa,contas,getPessoa()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="146,48">
+      <children xsi:type="editmodel:AttributeEditModel" name="contas" id="edu.flf.aps.bancox.domain/Cliente#contas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="edu.flf.aps.bancox.domain/Cliente#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pessoa" id="edu.flf.aps.bancox.domain/Cliente#pessoa"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="71,96">
+      <children xsi:type="editmodel:MethodEditModel" name="getContas" id="edu.flf.aps.bancox.domain/Cliente#getContas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="edu.flf.aps.bancox.domain/Cliente#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPessoa" id="edu.flf.aps.bancox.domain/Cliente#getPessoa()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setContas" id="edu.flf.aps.bancox.domain/Cliente#setContas(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="edu.flf.aps.bancox.domain/Cliente#setId(Ljava.lang.Long;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPessoa" id="edu.flf.aps.bancox.domain/Cliente#setPessoa(Ledu.flf.aps.bancox.domain.Pessoa;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Cliente-Soyatec::Import->edu.flf.aps.bancox.domain/ContaBancaria" source="//@children.16" target="//@children.14" targetEnd="//@children.16/@sourceConnections.0/@children.2" label="//@children.16/@sourceConnections.0/@children.0" sourceEnd="//@children.16/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="169,96" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,159"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="edu.flf.aps.bancox.domain/Cliente-Soyatec::Import->edu.flf.aps.bancox.domain/Pessoa" source="//@children.16" target="//@children.8" targetEnd="//@children.16/@sourceConnections.1/@children.2" label="//@children.16/@sourceConnections.1/@children.0" sourceEnd="//@children.16/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,36" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="128,203"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" name="TipoContaBancaria" location="1352,719" size="145,101" id="edu.flf.aps.bancox.domain/TipoContaBancaria" runTimeClassModel="POUPANCA%,SALARIO%,CORRENTE%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="65,48">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="POUPANCA" id="edu.flf.aps.bancox.domain/TipoContaBancaria#POUPANCA%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="SALARIO" id="edu.flf.aps.bancox.domain/TipoContaBancaria#SALARIO%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="CORRENTE" id="edu.flf.aps.bancox.domain/TipoContaBancaria#CORRENTE%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" name="TipoPessoa" location="719,321" size="96,85" id="edu.flf.aps.bancox.domain/TipoPessoa" runTimeClassModel="FISICA%,JURIDICA%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="54,32">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="JURIDICA" id="edu.flf.aps.bancox.domain/TipoPessoa#JURIDICA%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="FISICA" id="edu.flf.aps.bancox.domain/TipoPessoa#FISICA%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPrivateMethods="true"/>
+</editmodel:ClassDiagramEditModel>
