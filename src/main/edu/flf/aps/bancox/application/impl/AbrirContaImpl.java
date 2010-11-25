@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.flf.aps.bancox.application.AbrirConta;
-import edu.flf.aps.bancox.application.vo.AbrirContaDTO;
+import edu.flf.aps.bancox.application.vo.AbrirContaVO;
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.Cliente;
 import edu.flf.aps.bancox.domain.ContaBancaria;
@@ -45,7 +45,7 @@ public class AbrirContaImpl implements AbrirConta {
 	}
 
 	@Override
-	public ContaBancaria abraConta(AbrirContaDTO vo) throws IllegalAccessException {
+	public ContaBancaria abraConta(AbrirContaVO vo) throws IllegalAccessException {
 		boolean a = true;
 		if(a == true) throw new NegocioException("teste");
 		

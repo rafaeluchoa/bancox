@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.flf.aps.bancox.application.AbrirConta;
-import edu.flf.aps.bancox.application.vo.AbrirContaDTO;
+import edu.flf.aps.bancox.application.vo.AbrirContaVO;
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.Pessoa;
 import edu.flf.aps.bancox.domain.PessoaFisica;
@@ -41,7 +41,7 @@ public class AbrirContaController extends Controller {
 			// TODO
 		}
 
-		AbrirContaDTO vo = new AbrirContaDTO();
+		AbrirContaVO vo = new AbrirContaVO();
 		vo.setPessoa(pessoa);
 		vo.setTipoContaBancaria(view.getTipoConta());
 		vo.setAgencia(view.getAgencia());

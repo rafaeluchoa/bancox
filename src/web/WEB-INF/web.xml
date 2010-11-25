@@ -1,36 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<context-param>
-		<description>Vaadin production mode</description>
-		<param-name>productionMode</param-name>
-		<param-value>false</param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:META-INF/edu.flf.spring-base.xml,classpath*:META-INF/edu.flf.spring-persistence.xml</param-value>
-	</context-param>
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<listener>
-		<!-- To allow session-scoped beans -->
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-	</listener>
-	<servlet>
-		<servlet-name>main</servlet-name>
-		<servlet-class>edu.flf.aps.bancox.infrastruture.impl.SpringVaadinApplicationServlet</servlet-class>
-		<init-param>
-			<description>nome do bean do spring</description>
-			<param-name>nameSpringBeanApplication</param-name>
-			<param-value>homeApplication</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>main</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <context-param>
+    <description>Vaadin production mode</description>
+    <param-name>productionMode</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath*:META-INF/edu.flf.spring-base.xml,classpath*:META-INF/edu.flf.spring-persistence.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>main</servlet-name>
+    <servlet-class>edu.flf.aps.bancox.infrastruture.impl.SpringVaadinApplicationServlet</servlet-class>
+    <init-param>
+      <description>nome do bean do spring</description>
+      <param-name>nameSpringBeanApplication</param-name>
+      <param-value>homeApplication</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>main</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
 </web-app>
