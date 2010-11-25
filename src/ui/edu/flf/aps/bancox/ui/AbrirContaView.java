@@ -132,6 +132,7 @@ public class AbrirContaView implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				controller.abraConta(_this());
+				_this().getViewManager().mostreMensagem("Conta aberta com sucesso.");
 			}
 		});
 		form.addComponent(new Label(""));

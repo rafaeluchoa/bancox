@@ -74,7 +74,7 @@ public class HomeApplication extends Application implements ViewManager {
 	public final void init() {
 		this.setMainWindow(crieWindow());
 	}
-
+	
 	@Override
 	public void feche(View view) {
 		tabs.removeComponent(view.getComponent());
@@ -83,6 +83,16 @@ public class HomeApplication extends Application implements ViewManager {
 	@Override
 	public void mostreMensagem(String msg) {
 		TelaUtils.mostreMsg(mainWindow, msg);
+	}
+	
+	@Override
+	public void mostreErro(String erro) {
+		TelaUtils.mostreMsg(mainWindow, erro);
+	}
+
+	@Override
+	public Window getWindow() {
+		return mainWindow;
 	}
 
 }

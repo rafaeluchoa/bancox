@@ -25,4 +25,12 @@ public class TelaUtils {
 			);
 	}
 	
+	public static void mostreErro(Component c, String msg) {
+		getWindowRaiz(c).
+			showNotification(
+				"Erro", msg,
+				Notification.TYPE_ERROR_MESSAGE
+			);
+	}
+	
 }

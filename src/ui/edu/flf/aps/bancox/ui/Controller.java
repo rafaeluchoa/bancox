@@ -1,7 +1,17 @@
 package edu.flf.aps.bancox.ui;
 
-public interface Controller {
+public abstract class Controller {
+	
+	private ViewManager viewManager;
 
-	View init(ViewManager viewManager);
+	public ViewManager getViewManager() {
+		return viewManager;
+	}
+
+	public void setViewManager(ViewManager viewManager) {
+		this.viewManager = viewManager;
+	}
+
+	abstract View init(ViewManager viewManager);
 
 }

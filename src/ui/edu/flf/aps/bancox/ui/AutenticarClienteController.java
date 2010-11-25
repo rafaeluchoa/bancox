@@ -1,7 +1,5 @@
 package edu.flf.aps.bancox.ui;
 
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +9,7 @@ import edu.flf.aps.bancox.application.AutenticarCliente;
  * @author rafaeluchoa
  */
 @Service
-public class AutenticarClienteController implements Controller {
+public class AutenticarClienteController extends Controller {
 
 	@Autowired
 	private AutenticarCliente autenticarCliente;
