@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.flf.aps.bancox.application.AbrirConta;
-import edu.flf.aps.bancox.application.vo.AbrirContaVO;
+import edu.flf.aps.bancox.application.vo.AbrirContaDTO;
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.Cliente;
 import edu.flf.aps.bancox.domain.ContaBancaria;
 import edu.flf.aps.bancox.domain.ContaCorrente;
 import edu.flf.aps.bancox.domain.TipoContaBancaria;
+import edu.flf.aps.bancox.infrastruture.app.NegocioException;
 import edu.flf.aps.bancox.infrastruture.repositorio.RepositorioAgencia;
 import edu.flf.aps.bancox.infrastruture.repositorio.RepositorioCliente;
 import edu.flf.aps.bancox.infrastruture.repositorio.RepositorioContaBancaria;
@@ -44,7 +45,19 @@ public class AbrirContaImpl implements AbrirConta {
 	}
 
 	@Override
-	public ContaBancaria abraConta(AbrirContaVO vo) throws IllegalAccessException {
+	public ContaBancaria abraConta(AbrirContaDTO vo) throws IllegalAccessException {
+		boolean a = true;
+		if(a == true) throw new NegocioException("teste");
+		
+		// RN1
+		/*
+		if(vo.getTipoContaBancaria() == TipoContaBancaria.SALARIO && !(vo.getPessoa() instanceof PessoaFisica)) {
+			throw new ContaSalarioParaPessoaNaoFisicaException();
+		}
+		*/
+		
+		// RN2
+		
 
 		repositorioPessoa.inclua(vo.getPessoa());
 		
@@ -60,6 +73,8 @@ public class AbrirContaImpl implements AbrirConta {
 //			conta = new ContaSalario();
 //			
 		}
+		
+		// naubergois@gmail.com
 		
 		Cliente cliente = new Cliente();
 		cliente.setPessoa(vo.getPessoa());
