@@ -7,7 +7,7 @@ import edu.flf.aps.bancox.domain.TipoContaBancaria;
 /**
  * @author rafaeluchoa
  */
-public class AbrirContaVO {
+public class AbrirContaDTO {
 	
 	private Agencia agencia;
 	private Pessoa pessoa;

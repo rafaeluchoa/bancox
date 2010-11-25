@@ -4,7 +4,7 @@ package edu.flf.aps.bancox.application.vo;
 /**
  * @author rafaeluchoa
  */
-public class AutenticarClienteVO {
+public class AutenticarClienteDTO {
 	
 	private String numeroConta;
 	private String senha;
