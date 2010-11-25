@@ -2,9 +2,9 @@ package edu.flf.aps.bancox.application;
 
 import java.util.List;
 
-import edu.flf.aps.bancox.application.vo.AutenticarClienteVO;
+import edu.flf.aps.bancox.application.dto.AutenticarClienteDTO;
 
 public interface AutenticarCliente {
 	List<Integer[]> gerarTeclasAleatorias();
-	void autenticarCliente(AutenticarClienteVO vo);
+	void autenticarCliente(AutenticarClienteDTO vo);
 }
