@@ -1,4 +1,4 @@
-package edu.flf.aps.bancox.application.dto;
+package edu.flf.aps.bancox.application.vo;
 
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.Pessoa;
@@ -7,7 +7,7 @@ import edu.flf.aps.bancox.domain.TipoContaBancaria;
 /**
  * @author rafaeluchoa
  */
-public class AbrirContaDTO {
+public class AbrirContaVO {
 	
 	private Agencia agencia;
 	private Pessoa pessoa;

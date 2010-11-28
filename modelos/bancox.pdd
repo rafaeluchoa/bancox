@@ -2,7 +2,7 @@
 
 <DBMODEL Version="1.3" TYPE="PostgreSQL">
 
-<MODELSETTINGS MDDVERSION="1.2.8 (build 524)" ModelProject="" ModelName="bancox" ModelCompany="" ModelAuthor="" ModelCopyright="" ModelVersion="" ModelVersionAI="0" ModelCreated="2010-08-25 00:56:39" ModelUpdated="2010-08-25 01:18:13" Description="" Annotation="" ZoomFac="100.00" XPos="0" YPos="0" PrintLink="" GenSettings="object TGenSettings\n  TextCharCase = tccMixed\n  ModelCheck = True\n  DropIfExists = True\n  ISQL = False\n  DBOptions = [dbgoCreate, dbgoBeginScript, dbgoEndScript]\n  ViewOptions = [viewgoCreate, viewgoCreateRule]\n  SPOptions = [spgoCreate]\n  TableOptions = [tblgoCreate, tblgoBeginScript, tblgoEndScript, tblgoComment, tblgoCreatePK, tblgoCreateFK, tblgoCreateIndex, tblgoCreateRule, tblgoCreateTrigger]\n  RoleCreate = True\n  RoleWhenCreate = rocrInScript\n  SQLTypeNames = False\nend\n" WorkspaceColor="16777215" SnapGrid="1" DisplaySnap="1" SnapSize="10" ShowPages="1" ShowIcons="1" ShowTableColumns="1" ShowTableInhColumns="1" ShowTableIndeces="1" ShowTableConstraints="1" ShowTableRules="1" ShowColumnTypes="1" ShowDomains="0" ShowIndexInd="0" ShowNullInd="0" ShowForeignKeys="1" EntityFillColor="16777215" EntityLineColor="8388608" ShowRefName="1" ShowCardinality="0" ShowJoin="0" Notation="0" RefColor="8388608" RefLabelColor="16777215" DefaultDelete="3" DefaultUpdate="3" DefaultDataType="23" DefaultSchemaID="0" FKPrefix="" QueryDelimiter=";" DBQuoteCharacter="\A" EncloseNames="1" HPageCount="5" VPageCount="5" SPFillColor="13499135" SPLineColor="8388608" ViewFillColor="3329434" ViewLineColor="8388608" MinimapBackColor="16777215" MinimapShapesStyle="2" MinimapVisibleAreaStyle="2" />
+<MODELSETTINGS MDDVERSION="1.2.8 (build 524)" ModelProject="" ModelName="bancox" ModelCompany="" ModelAuthor="" ModelCopyright="" ModelVersion="" ModelVersionAI="0" ModelCreated="2010-11-27 02:39:21" ModelUpdated="2010-11-27 02:42:11" Description="" Annotation="" ZoomFac="100.00" XPos="0" YPos="0" PrintLink="" GenSettings="object TGenSettings\n  TextCharCase = tccMixed\n  ModelCheck = True\n  DropIfExists = True\n  ISQL = False\n  DBOptions = [dbgoCreate, dbgoBeginScript, dbgoEndScript]\n  ViewOptions = [viewgoCreate, viewgoCreateRule]\n  SPOptions = [spgoCreate]\n  TableOptions = [tblgoCreate, tblgoBeginScript, tblgoEndScript, tblgoComment, tblgoCreatePK, tblgoCreateFK, tblgoCreateIndex, tblgoCreateRule, tblgoCreateTrigger]\n  RoleCreate = True\n  RoleWhenCreate = rocrInScript\n  SQLTypeNames = False\nend\n" WorkspaceColor="16777215" SnapGrid="1" DisplaySnap="1" SnapSize="10" ShowPages="1" ShowIcons="1" ShowTableColumns="1" ShowTableInhColumns="1" ShowTableIndeces="1" ShowTableConstraints="1" ShowTableRules="1" ShowColumnTypes="1" ShowDomains="0" ShowIndexInd="0" ShowNullInd="0" ShowForeignKeys="1" EntityFillColor="16777215" EntityLineColor="8388608" ShowRefName="1" ShowCardinality="0" ShowJoin="0" Notation="0" RefColor="8388608" RefLabelColor="16777215" DefaultDelete="3" DefaultUpdate="3" DefaultDataType="23" DefaultSchemaID="0" FKPrefix="" QueryDelimiter=";" DBQuoteCharacter="\A" EncloseNames="1" HPageCount="5" VPageCount="5" SPFillColor="13499135" SPLineColor="8388608" ViewFillColor="3329434" ViewLineColor="8388608" MinimapBackColor="16777215" MinimapShapesStyle="2" MinimapVisibleAreaStyle="2" />
 
 <DATABASE Name="bancox" CharacterSet="" Tablespace="" Owner="" Template="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="0" />
 
@@ -10,6 +10,7 @@
 </STAMPS>
 
 <ROLES>
+<ROLE ID="10" Name="postgres" Roles="" Admins="" Generate="0" Comments="" Password="md59df270eb52907fff723d9b8b7436113a" CreateDB="1" SuperUser="1" CreateRole="1" Inherit="1" UpdateCatalogs="1" Login="1" PassEncrypted="1" Valid="2958465.99999"></ROLE>
 </ROLES>
 
 <SCHEMAS>
@@ -17,13 +18,51 @@
 </SCHEMAS>
 
 <SEQUENCES>
+<SEQUENCE ID="17971" Name="cliente_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="1450" Cache="1" Cycle="0"></SEQUENCE>
+<SEQUENCE ID="17973" Name="agencia_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="850" Cache="1" Cycle="0"></SEQUENCE>
+<SEQUENCE ID="17975" Name="endereco_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="850" Cache="1" Cycle="0"></SEQUENCE>
+<SEQUENCE ID="17977" Name="pessoa_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="1450" Cache="1" Cycle="0"></SEQUENCE>
+<SEQUENCE ID="17980" Name="conta_bancaria_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="1300" Cache="1" Cycle="0"></SEQUENCE>
+<SEQUENCE ID="17987" Name="acesso_seq" SchemaName="public" SchemaOID="0" Owner="postgres" Comments="" Increment="50" MinValue="1" MaxValue="9223372036854775807" StartValue="650" Cache="1" Cycle="0"></SEQUENCE>
 </SEQUENCES>
 
 <DOMAINS>
 </DOMAINS>
 
 <COMPOSITES>
-<COMPOSITE ID="10000" Name="Table_01" SchemaName="public" Comments="" MasterTableOID="1000">
+<COMPOSITE ID="10001" Name="acesso" SchemaName="public" Comments="" MasterTableOID="17982">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10002" Name="agencia" SchemaName="public" Comments="" MasterTableOID="17874">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10003" Name="cliente" SchemaName="public" Comments="" MasterTableOID="17882">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10005" Name="contabancaria" SchemaName="public" Comments="" MasterTableOID="17869">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10006" Name="contacorrente" SchemaName="public" Comments="" MasterTableOID="17887">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10007" Name="endereco" SchemaName="public" Comments="" MasterTableOID="17923">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10009" Name="pessoa" SchemaName="public" Comments="" MasterTableOID="17900">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10010" Name="pessoafisica" SchemaName="public" Comments="" MasterTableOID="17892">
+	<COLUMNS>
+	</COLUMNS>
+</COMPOSITE>
+<COMPOSITE ID="10011" Name="pessoajuridica" SchemaName="public" Comments="" MasterTableOID="17915">
 	<COLUMNS>
 	</COLUMNS>
 </COMPOSITE>
@@ -40,13 +79,254 @@
 
 <METADATA>
 <ENTITIES>
-<ENTITY ID="1000" Name="Table_01" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="157" YPos="78" Temporary="0" OnCommit="" WithOIDsSpecified="0" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+<ENTITY ID="17982" Name="acesso" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="30" YPos="370" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
 	<COLUMNS>
+			<COLUMN ID="1" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="2" Name="dtgeracao" Pos="2" Datatype="1114" Type="timestamp" Width="-1" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="3" Name="senha" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="4" Name="dtexpiracao" Pos="4" Datatype="1114" Type="timestamp" Width="-1" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="5" Name="pessoa_id" Pos="5" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17986" Name="acesso_pkey" Kind="2" Expression="" ReferenceIndex="17986" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="1" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17985" Name="acesso_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17986" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17874" Name="agencia" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="650" YPos="60" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="6" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="7" Name="nome" Pos="2" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="8" Name="numero" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="9" Name="endereco_id" Pos="4" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_BEGIN>
+		<REFERENCE_BEGIN ID="17931" />
+		<REFERENCE_BEGIN ID="17946" />
+	</REFERENCES_BEGIN>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17941" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17881" Name="agencia_pkey" Kind="2" Expression="" ReferenceIndex="17881" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="6" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17880" Name="agencia_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17881" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17882" Name="cliente" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="250" YPos="170" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="10" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="11" Name="pessoa_id" Pos="2" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_BEGIN>
+		<REFERENCE_BEGIN ID="17936" />
+		<REFERENCE_BEGIN ID="17951" />
+	</REFERENCES_BEGIN>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17886" Name="cliente_pkey" Kind="2" Expression="" ReferenceIndex="17886" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="10" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17885" Name="cliente_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17886" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17869" Name="contabancaria" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="30" YPos="60" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="14" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="15" Name="saldo" Pos="2" Datatype="701" Type="float8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="16" Name="numero" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="17" Name="agencia_id" Pos="4" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="18" Name="titular_id" Pos="5" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17931" />
+		<REFERENCE_END ID="17936" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17873" Name="contabancaria_pkey" Kind="2" Expression="" ReferenceIndex="17873" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="14" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17872" Name="contabancaria_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17873" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17887" Name="contacorrente" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="410" YPos="160" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="19" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="20" Name="saldo" Pos="2" Datatype="701" Type="float8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="21" Name="numero" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="22" Name="titular_id" Pos="4" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="23" Name="agencia_id" Pos="5" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17946" />
+		<REFERENCE_END ID="17951" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17891" Name="contacorrente_pkey" Kind="2" Expression="" ReferenceIndex="17891" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="19" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17890" Name="contacorrente_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17891" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17923" Name="endereco" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="530" YPos="320" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="24" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="25" Name="bairro" Pos="2" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="26" Name="cidade" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="27" Name="estado" Pos="4" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="28" Name="rua" Pos="5" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="29" Name="numero" Pos="6" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_BEGIN>
+		<REFERENCE_BEGIN ID="17941" />
+		<REFERENCE_BEGIN ID="17961" />
+		<REFERENCE_BEGIN ID="17956" />
+		<REFERENCE_BEGIN ID="17966" />
+	</REFERENCES_BEGIN>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17930" Name="endereco_pkey" Kind="2" Expression="" ReferenceIndex="17930" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="24" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17929" Name="endereco_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17930" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17900" Name="pessoa" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="240" YPos="390" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="32" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="33" Name="nome" Pos="2" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="34" Name="endereco_id" Pos="3" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17961" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17904" Name="pessoa_pkey" Kind="2" Expression="" ReferenceIndex="17904" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="32" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17903" Name="pessoa_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17904" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17892" Name="pessoafisica" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="760" YPos="330" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="35" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="36" Name="nome" Pos="2" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="37" Name="rg" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="38" Name="cpf" Pos="4" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="39" Name="endereco_id" Pos="5" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="40" Name="email" Pos="6" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17956" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17899" Name="pessoafisica_pkey" Kind="2" Expression="" ReferenceIndex="17899" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="35" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17898" Name="pessoafisica_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17899" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
+</ENTITY>
+<ENTITY ID="17915" Name="pessoajuridica" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="30" YPos="250" Temporary="0" OnCommit="" WithOIDsSpecified="1" WithOIDs="0" FillFactor="0" Inherits="" DelayKeyTblUpdates="0" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" >
+	<COLUMNS>
+			<COLUMN ID="41" Name="id" Pos="1" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="1" AutoInc="0" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="42" Name="nome" Pos="2" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="43" Name="razaosocial" Pos="3" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="44" Name="cnpj" Pos="4" Datatype="1043" Type="varchar" Width="255" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+			<COLUMN ID="45" Name="endereco_id" Pos="5" Datatype="20" Type="int8" Width="0" Prec="0" NotNull="0" AutoInc="0" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+	</COLUMNS>
+	<REFERENCES_END>
+		<REFERENCE_END ID="17966" />
+	</REFERENCES_END>
+	<CONSTRAINTS>
+			<CONSTRAINT ID="17922" Name="pessoajuridica_pkey" Kind="2" Expression="" ReferenceIndex="17922" FillFactor="0" Comments="" TablespaceID="0">
+				<CONSTRAINTCOLUMNS>
+					<CONSTRAINTCOLUMN ID="41" />
+				</CONSTRAINTCOLUMNS>
+		</CONSTRAINT>
+	</CONSTRAINTS>
+	<INDEXES>
+		<INDEX ID="17921" Name="pessoajuridica_pkey" Unique="1" Method="1" Predicate="" TablespaceID="0" ReferenceConstraint="17922" FillFactor="0" Comments="">
+			<INDEXCOLUMNS COMMATEXT="id"></INDEXCOLUMNS>
+			<INDEXSORTS COMMATEXT=""></INDEXCOLUMNS>
+			<INDEXNULLS COMMATEXT=""></INDEXCOLUMNS>
+		</INDEX>
+	</INDEXES>
 </ENTITY>
 </ENTITIES>
 
 <REFERENCES>
+<REFERENCE ID="17941" Name="fk_agencia_endereco_id" SOURCE="17923" DESTINATION="17874" FKIDS="24=9\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17930" />
+<REFERENCE ID="17931" Name="fk_contabancaria_agencia_id" SOURCE="17874" DESTINATION="17869" FKIDS="6=17\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17881" />
+<REFERENCE ID="17936" Name="fk_contabancaria_titular_id" SOURCE="17882" DESTINATION="17869" FKIDS="10=18\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17886" />
+<REFERENCE ID="17946" Name="fk_contacorrente_agencia_id" SOURCE="17874" DESTINATION="17887" FKIDS="6=23\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17881" />
+<REFERENCE ID="17951" Name="fk_contacorrente_titular_id" SOURCE="17882" DESTINATION="17887" FKIDS="10=22\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17886" />
+<REFERENCE ID="17961" Name="fk_pessoa_endereco_id" SOURCE="17923" DESTINATION="17900" FKIDS="24=34\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17930" />
+<REFERENCE ID="17956" Name="fk_pessoafisica_endereco_id" SOURCE="17923" DESTINATION="17892" FKIDS="24=39\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17930" />
+<REFERENCE ID="17966" Name="fk_pessoajuridica_endereco_id" SOURCE="17923" DESTINATION="17915" FKIDS="24=45\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="17930" />
 </REFERENCES>
 
 <NOTES>

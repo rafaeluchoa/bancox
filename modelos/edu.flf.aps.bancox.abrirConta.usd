@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:SequenceDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="edu.flf.aps.bancox.abrirConta" size="1317,645" metadata="uml2-1.0" initialized="true" scrolledX="-5" tag="1000" key="32303037303533312D313030302062616E636F782F72616661656C7563686F61">
+<editmodel:SequenceDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="edu.flf.aps.bancox.abrirConta" size="1294,645" metadata="uml2-1.0" initialized="true" scrolledX="-5" tag="1000" key="32303037303533312D313030302062616E636F782F72616661656C7563686F61">
   <children xsi:type="editmodel:InstanceEditModel" name="AbrirContaView" location="255,20" size="126,605" id="edu.flf.aps.bancox.ui/AbrirContaView" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.5/@children.0/@sourceConnections.0" location="55,102" size="16,158" sequenceItemContainer="//@children.0" length="158">
       <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="getAgencias" id="edu.flf.aps.bancox.ui/AbrirContaController#getAgencias()" source="//@children.0/@children.0" target="//@children.1/@children.0" targetEnd="//@children.0/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="getAgencias(): List" associatedSequenceNumber="1.1">
@@ -35,7 +35,7 @@
       </sourceConnections>
     </children>
   </children>
-  <children xsi:type="editmodel:InstanceEditModel" name="AbrirContaController" location="443,20" size="146,605" id="edu.flf.aps.bancox.ui/AbrirContaController" itemName="">
+  <children xsi:type="editmodel:InstanceEditModel" name="AbrirContaController" location="405,20" size="146,605" id="edu.flf.aps.bancox.ui/AbrirContaController" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.0/@children.0/@sourceConnections.0" location="65,121" size="16,139" sequenceItemContainer="//@children.1" length="139">
       <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="getAgencias" id="edu.flf.aps.bancox.application/AbrirConta#getAgencias()" source="//@children.1/@children.0" target="//@children.2/@children.0" targetEnd="//@children.1/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="getAgencias(): List" associatedSequenceNumber="1.1.1">
         <children xsi:type="editmodel:SequenceEndEditModel" location="5,33" anchorKind="FixedAtEdge" attachSource="true" userLabel="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.0" methodLabel="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.1" sequenceNumberLabel="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.2" statementExpression="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.3">
@@ -53,7 +53,7 @@
       </sourceConnections>
     </children>
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.0/@children.2/@sourceConnections.0" location="65,362" size="16,118" sequenceItemContainer="//@children.1" length="118">
-      <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="abraConta" id="edu.flf.aps.bancox.application/AbrirConta#abraConta(Ledu.flf.aps.bancox.application.vo.AbrirContaVO;)" source="//@children.1/@children.1" target="//@children.2/@children.1" targetEnd="//@children.1/@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="abraConta(AbrirContaVO): ContaBancaria" associatedSequenceNumber="1.1.1">
+      <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="abraConta" source="//@children.1/@children.1" target="//@children.2/@children.1" targetEnd="//@children.1/@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="abraConta(AbrirContaVO): ContaBancaria" associatedSequenceNumber="1.1.1">
         <children xsi:type="editmodel:SequenceEndEditModel" location="12,20" anchorKind="FixedAtEdge" attachSource="true" userLabel="//@children.1/@children.1/@sourceConnections.0/@children.0/@children.0" methodLabel="//@children.1/@children.1/@sourceConnections.0/@children.0/@children.1" sequenceNumberLabel="//@children.1/@children.1/@sourceConnections.0/@children.0/@children.2" statementExpression="//@children.1/@children.1/@sourceConnections.0/@children.0/@children.3">
           <children xsi:type="editmodel:MessageLabelEditModel" size="0,14"/>
           <children xsi:type="editmodel:LabelEditModel" name="abraConta(AbrirContaVO): ContaBancaria" size="203,14"/>
@@ -69,7 +69,7 @@
       </sourceConnections>
     </children>
   </children>
-  <children xsi:type="editmodel:InstanceEditModel" name="AbrirConta" location="675,20" size="118,605" id="edu.flf.aps.bancox.application/AbrirConta" itemName="">
+  <children xsi:type="editmodel:InstanceEditModel" name="AbrirConta" location="645,20" size="118,605" id="edu.flf.aps.bancox.application/AbrirConta" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.0" location="51,154" size="16,106" sequenceItemContainer="//@children.2" length="106">
       <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="getAll" id="edu.flf.aps.bancox.infrastruture/Repositorio#getAll()" source="//@children.2/@children.0" target="//@children.3/@children.0" targetEnd="//@children.2/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="getAll(): List" associatedSequenceNumber="1.1.1.1">
         <children xsi:type="editmodel:SequenceEndEditModel" location="10,12" anchorKind="FixedAtEdge" attachSource="true" userLabel="//@children.2/@children.0/@sourceConnections.0/@children.0/@children.0" methodLabel="//@children.2/@children.0/@sourceConnections.0/@children.0/@children.1" sequenceNumberLabel="//@children.2/@children.0/@sourceConnections.0/@children.0/@children.2" statementExpression="//@children.2/@children.0/@sourceConnections.0/@children.0/@children.3">
@@ -117,13 +117,13 @@
       </sourceConnections>
     </children>
   </children>
-  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioAgencia" location="795,20" size="161,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioAgencia" itemName="">
+  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioAgencia" location="762,20" size="161,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioAgencia" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.2/@children.0/@sourceConnections.0" location="72,166" size="16,40" sequenceItemContainer="//@children.3"/>
   </children>
-  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioContaBancaria" location="1097,20" size="192,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioContaBancaria" itemName="">
+  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioContaBancaria" location="1072,20" size="192,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioContaBancaria" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.0" location="88,440" size="16,40" sequenceItemContainer="//@children.4"/>
   </children>
-  <children xsi:type="editmodel:ActorEditModel" location="0,20" size="100,605" itemName="Usuário">
+  <children xsi:type="editmodel:ActorEditModel" location="105,20" size="100,605" itemName="Usuário">
     <children xsi:type="editmodel:ActivationEditModel" location="42,102" size="16,393" sequenceItemContainer="//@children.5" length="393">
       <sourceConnections xsi:type="editmodel:SequenceMessageEditModel" name="AbrirContaView" source="//@children.5/@children.0" target="//@children.0/@children.0" targetEnd="//@children.5/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual" associatedMethod="" associatedSequenceNumber="1">
         <children xsi:type="editmodel:SequenceEndEditModel" anchorKind="FixedAtEdge" attachSource="true" userLabel="//@children.5/@children.0/@sourceConnections.0/@children.0/@children.0" methodLabel="//@children.5/@children.0/@sourceConnections.0/@children.0/@children.1" sequenceNumberLabel="//@children.5/@children.0/@sourceConnections.0/@children.0/@children.2" statementExpression="//@children.5/@children.0/@sourceConnections.0/@children.0/@children.3">
@@ -169,7 +169,7 @@
       </sourceConnections>
     </children>
   </children>
-  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioCliente" location="955,20" size="135,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioCliente" itemName="">
+  <children xsi:type="editmodel:InstanceEditModel" name="RepositorioCliente" location="930,20" size="135,605" id="edu.flf.aps.bancox.infrastruture.repositorio/RepositorioCliente" itemName="">
     <children xsi:type="editmodel:ActivationEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.1" location="59,390" size="16,40" sequenceItemContainer="//@children.6"/>
   </children>
   <diagramOptions xsi:type="options:SequenceDiagramOptions" level="0" properties="Product=eUML2" autoName="false"/>

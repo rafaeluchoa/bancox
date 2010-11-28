@@ -8,7 +8,7 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 
 import edu.flf.aps.bancox.application.AutenticarCliente;
-import edu.flf.aps.bancox.application.dto.AutenticarClienteDTO;
+import edu.flf.aps.bancox.application.vo.AutenticarClienteVO;
 
 /**
  * @author rafaeluchoa
@@ -38,7 +38,7 @@ public class AutenticarClienteImpl implements AutenticarCliente {
 	}
 
 	@Override
-	public void autenticarCliente(AutenticarClienteDTO vo) {
+	public void autenticarCliente(AutenticarClienteVO vo) {
 		
 		// TODO:autenticarClienteImpl
 	}

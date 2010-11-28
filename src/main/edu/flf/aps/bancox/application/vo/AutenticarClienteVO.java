@@ -1,10 +1,10 @@
-package edu.flf.aps.bancox.application.dto;
+package edu.flf.aps.bancox.application.vo;
 
 
 /**
  * @author rafaeluchoa
  */
-public class AutenticarClienteDTO {
+public class AutenticarClienteVO {
 	
 	private String numeroConta;
 	private String senha;

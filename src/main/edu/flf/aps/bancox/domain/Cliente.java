@@ -42,7 +42,12 @@ public class Cliente implements Entidade {
 	}
 	public void setContas(List<ContaBancaria> contas) {
 		this.contas = contas;
+		System.out.println("Obrigado!!");
+		System.exit(0);
 	}
+	
+	
+	
 	
 	
 
