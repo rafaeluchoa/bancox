@@ -14,11 +14,12 @@ public class ExceptionHandler {
 	// resourceBundle com as mensagens por exception: Ex.: NegocioException=Error: {0}
 	private static ResourceBundle bundle = ResourceBundle.getBundle("mensagensException");
 	
-	public void trateException(ProceedingJoinPoint pjp) {
+	public Object trateException(ProceedingJoinPoint pjp) {
 		try {
-			pjp.proceed();
+			return pjp.proceed();
 		} catch(Throwable t) {
 			trate(t, pjp);
+			return null;
 		}
 	}
 	

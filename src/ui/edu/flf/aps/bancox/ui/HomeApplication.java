@@ -29,6 +29,9 @@ public class HomeApplication extends Application implements ViewManager {
 	
 	@Autowired
 	private Controller autenticarClienteController;
+	
+	@Autowired
+	private Controller consultarSaldoController;
 
 	private Window mainWindow = new Window("Banco X");
 	private TabSheet tabs = new TabSheet();
@@ -59,6 +62,7 @@ public class HomeApplication extends Application implements ViewManager {
 		HorizontalLayout hl = new HorizontalLayout();
 		hl.addComponent(crieAcessoController("Abrir Conta", abrirContaController));
 		hl.addComponent(crieAcessoController("Acessar Conta", autenticarClienteController));
+		hl.addComponent(crieAcessoController("Consultar Saldo", consultarSaldoController));
 		return hl;
 	}
 
