@@ -22,9 +22,8 @@ public class AbrirContaController extends Controller {
 	@Autowired
 	private AbrirConta abrirConta;
 	
-	public AbrirContaView init(ViewManager viewManager) {
+	public AbrirContaView init() {
 		AbrirContaView view = new AbrirContaView(this);
-		view.setViewManager(viewManager);
 		view.init(abrirConta.getAgencias());
 		return view;
 	}
@@ -38,7 +37,7 @@ public class AbrirContaController extends Controller {
 			pessoa.setEmail(view.getFisicaEmail());
 		} else {
 			pessoa = new PessoaJuridica();
-			// TODO
+			// TODO: logica da pessoa juridica
 		}
 
 		AbrirContaVO vo = new AbrirContaVO();
@@ -46,15 +45,9 @@ public class AbrirContaController extends Controller {
 		vo.setTipoContaBancaria(view.getTipoConta());
 		vo.setAgencia(view.getAgencia());
 		
-		try {
-			abrirConta.abraConta(vo);
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		abrirConta.abraConta(vo);
 		
-	// TODO: melhorar isso aqui
-		view.getViewManager().feche(view);
+		getViewManager().removeView(view);
 	}
 	
 	public List<Agencia> getAgencias() {

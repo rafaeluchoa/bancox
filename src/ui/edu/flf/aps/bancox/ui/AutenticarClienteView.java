@@ -4,21 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
 
 /**
  * @author rafaeluchoa
  */
 public class AutenticarClienteView implements View {
 	
-	private static final String L_AGENCIA_NOME = "L_AGENCIA_NOME";
-
-	private ViewManager viewManager;
 	private VerticalLayout form;
 
 	private TextField tfNumeroConta = new TextField();
@@ -39,6 +36,8 @@ public class AutenticarClienteView implements View {
 	@SuppressWarnings("serial")
 	public void init(List<Integer[]> digitos) {
 		form = new VerticalLayout();
+		form.setSpacing(true);
+		form.setMargin(true);
 		
 		form.addComponent(new Label("Número da Conta: "));
 		form.addComponent(tfNumeroConta);
@@ -90,14 +89,6 @@ public class AutenticarClienteView implements View {
 		return form;
 	}
 
-	public ViewManager getViewManager() {
-		return viewManager;
-	}
-
-	public void setViewManager(ViewManager viewManager) {
-		this.viewManager = viewManager;
-	}
-	
 	public List<Integer[]> getSenha() {
 		return digitados;
 	}

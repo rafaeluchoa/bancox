@@ -10,7 +10,7 @@ import edu.flf.aps.bancox.infrastruture.repositorio.RepositorioContaBancaria;
 import edu.flf.aps.bancox.infrastruture.repositorio.RepositorioPessoa;
 
 public interface AbrirConta {
-	public ContaBancaria abraConta(AbrirContaVO vo) throws IllegalAccessException;
+	public ContaBancaria abraConta(AbrirContaVO vo);
 	
 	void setRepositorioContaBancaria(RepositorioContaBancaria repositorio);
 	void setRepositorioPessoa(RepositorioPessoa repositorio);

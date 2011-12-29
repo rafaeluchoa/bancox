@@ -12,6 +12,6 @@ public abstract class Controller {
 		this.viewManager = viewManager;
 	}
 
-	abstract View init(ViewManager viewManager);
+	abstract View init();
 
 }

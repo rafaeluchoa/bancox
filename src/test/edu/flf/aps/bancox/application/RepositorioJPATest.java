@@ -32,16 +32,16 @@ public class RepositorioJPATest {
 		o.setNome("teste");
 		repositorioEntidadeXTest.inclua(o);
 
-		o = repositorioEntidadeXTest.findById(1L);
+		o = repositorioEntidadeXTest.busquePorId(1L);
 		Assert.assertNotNull(o);
 		
 		o.setNome("teste02");
 		repositorioEntidadeXTest.altere(o);
 
-		o = repositorioEntidadeXTest.findById(1L);
+		o = repositorioEntidadeXTest.busquePorId(1L);
 		Assert.assertTrue(o.getNome().equals("teste02"));
 
-		List<EntidadeXTest> lista = repositorioEntidadeXTest.getAll();
+		List<EntidadeXTest> lista = repositorioEntidadeXTest.busqueTodos();
 		Assert.assertTrue(!lista.isEmpty());
 
 		for (@SuppressWarnings("unused")
@@ -49,7 +49,7 @@ public class RepositorioJPATest {
 			repositorioEntidadeXTest.exclua(o);
 		}
 
-		lista = repositorioEntidadeXTest.getAll();
+		lista = repositorioEntidadeXTest.busqueTodos();
 		Assert.assertTrue(lista.isEmpty());
 	}
 

@@ -29,14 +29,19 @@ public class RepositorioJPA<E extends Entidade> implements Repositorio<E> {
 	}
 
 	@Override
-	public List<E> getAll() {
-		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<E> query = builder.createQuery(clazz);
-		Root<E> root = query.from(clazz);
-		query.select(root);
-
-		TypedQuery<E> typedQuery = entityManager.createQuery(query);
-		return typedQuery.getResultList();
+	public List<E> busqueTodos() {
+		try {
+			CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+			CriteriaQuery<E> query = builder.createQuery(clazz);
+			
+			Root<E> root = query.from(clazz);
+			query.select(root);
+	
+			TypedQuery<E> typedQuery = entityManager.createQuery(query);
+			return typedQuery.getResultList();
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
@@ -58,7 +63,7 @@ public class RepositorioJPA<E extends Entidade> implements Repositorio<E> {
 	}
 
 	@Override
-	public E findById(Long id) {
+	public E busquePorId(Long id) {
 		return entityManager.find(clazz, id);
 	}
 

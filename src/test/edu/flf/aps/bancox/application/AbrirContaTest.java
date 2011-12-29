@@ -4,9 +4,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import edu.flf.aps.bancox.application.impl.AbrirContaImpl;
 import edu.flf.aps.bancox.domain.Agencia;
-import edu.flf.aps.bancox.domain.ContaBancaria;
 import edu.flf.aps.bancox.domain.PessoaFisica;
 import edu.flf.aps.bancox.infrastruture.impl.RepositorioEmMemoria;
 
@@ -31,7 +29,7 @@ public class AbrirContaTest {
 		ag = rAgencia.inclua(ag); 	 	
 		Assert.assertTrue(pf.getId() != null);
 
-		AbrirConta abrirConta = new AbrirContaImpl();
+		//AbrirConta abrirConta = new AbrirContaImpl();
 		//abrirConta.setRepositorioContaBancaria(new RepositorioEmMemoria<ContaBancaria>());
 		//abrirConta.setRepositorioPessoa(rPessoa);
 		// abrirConta.setRepositorioAgencia(rAgencia);

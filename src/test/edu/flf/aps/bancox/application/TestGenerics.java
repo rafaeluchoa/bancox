@@ -2,13 +2,6 @@ package edu.flf.aps.bancox.application;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.lang.reflect.TypeVariable;
-import java.util.ArrayList;
-import java.util.List;
-
-import edu.flf.aps.bancox.application.domain.EntidadeXTest;
-import edu.flf.aps.bancox.infrastruture.Entidade;
-import edu.flf.aps.bancox.infrastruture.Repositorio;
 
 
 class RepositorioX {
@@ -16,23 +9,26 @@ class RepositorioX {
 	
 	public void reportType()
   {
-      Class thisClass = getClass();
+      /*Class thisClass = getClass();
       Type[] t = thisClass.getGenericInterfaces();
       ParameterizedType pType = (ParameterizedType)t[0];
       // Since we KNOW this must be a ParameterizedType, we can cast
 //      ParameterizedType pType = (ParameterizedType)thisClass.getGenericInterfaces();
-      Type firstType = pType.getActualTypeArguments()[0];
+      //Type firstType = pType.getActualTypeArguments()[0];
 //      Class whatWeWant = (Class)firstType;
 //      System.out.println("This example is using type " + whatWeWant.getName() + " for parameter T");
+ *
+ */
   }
 	
 }
 
 class Example<T>
 {
+	@SuppressWarnings("rawtypes")
      public void reportType()
      {
-         Class thisClass = getClass();
+		Class thisClass = getClass();
          // Since we KNOW this must be a ParameterizedType, we can cast
          ParameterizedType pType = (ParameterizedType)thisClass.getGenericSuperclass();
          Type firstType = pType.getActualTypeArguments()[0];

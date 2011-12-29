@@ -15,7 +15,7 @@ public class RepositorioEmMemoria<E extends Entidade> implements Repositorio<E> 
 	private Map<Integer, E> mapa = new HashMap<Integer, E>();
 
 	@Override
-	public List<E> getAll() {
+	public List<E> busqueTodos() {
 		List<E> retorno = new ArrayList<E>(lista);
 		return retorno;
 	}
@@ -32,7 +32,7 @@ public class RepositorioEmMemoria<E extends Entidade> implements Repositorio<E> 
 	}
 
 	@Override
-	public E findById(Long id) {
+	public E busquePorId(Long id) {
 		return mapa.get(id);
 	}
 

@@ -9,13 +9,13 @@ import com.vaadin.event.FieldEvents.BlurEvent;
 import com.vaadin.event.FieldEvents.BlurListener;
 import com.vaadin.ui.AbstractSelect;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
 
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.TipoContaBancaria;
@@ -28,7 +28,6 @@ public class AbrirContaView implements View {
 	
 	private static final String L_AGENCIA_NOME = "L_AGENCIA_NOME";
 
-	private ViewManager viewManager;
 	private VerticalLayout form;
 
 	private ComboBox cbAgencias = new ComboBox();
@@ -61,6 +60,8 @@ public class AbrirContaView implements View {
 	@SuppressWarnings("serial")
 	public void init(List<Agencia> agencias) {
 		form = new VerticalLayout();
+		form.setSpacing(true);
+		form.setMargin(true);
 
 		form.addComponent(new Label("Agência: "));
 		form.addComponent(cbAgencias);
@@ -132,7 +133,7 @@ public class AbrirContaView implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				controller.abraConta(_this());
-				_this().getViewManager().mostreMensagem("Conta aberta com sucesso.");
+				controller.getViewManager().mostreMensagem("Conta aberta com sucesso.");
 			}
 		});
 		form.addComponent(new Label(""));
@@ -141,6 +142,7 @@ public class AbrirContaView implements View {
 
 	private Component criePanelPessoaFisica() {
 		VerticalLayout formPessoaFisica = new VerticalLayout();
+		formPessoaFisica.setSpacing(true);
 
 		formPessoaFisica.addComponent(new Label("CPF: "));
 		formPessoaFisica.addComponent(tfFisicaCpf);
@@ -159,6 +161,7 @@ public class AbrirContaView implements View {
 	
 	private Component criePanelPessoaJuridica() {
 		VerticalLayout formPessoaJuridica = new VerticalLayout();
+		formPessoaJuridica.setSpacing(true);
 
 		formPessoaJuridica.addComponent(new Label("CNPJ: "));
 		formPessoaJuridica.addComponent(tfJuridicaCnpj);
@@ -206,14 +209,6 @@ public class AbrirContaView implements View {
 	
 	public String getJuridicaEmail() {
 		return (String) tfJuridicaEmail.getValue();
-	}
-
-	public ViewManager getViewManager() {
-		return viewManager;
-	}
-
-	public void setViewManager(ViewManager viewManager) {
-		this.viewManager = viewManager;
 	}
 
 }

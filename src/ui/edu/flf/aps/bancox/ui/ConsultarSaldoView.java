@@ -1,17 +1,16 @@
 package edu.flf.aps.bancox.ui;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
 
 public class ConsultarSaldoView implements View {
 	
-	private ViewManager viewManager;
 	private VerticalLayout form;
 	
 	private TextField tfNumeroConta = new TextField();
@@ -31,6 +30,8 @@ public class ConsultarSaldoView implements View {
 	@SuppressWarnings("serial")
 	public void init(){
 		form = new VerticalLayout();
+		form.setSpacing(true);
+		form.setMargin(true);
 		
 		form.addComponent(new Label("Número da Conta: ")); 
 		// TODO: por enquanto deixa o usuario digitar o numero
@@ -47,7 +48,7 @@ public class ConsultarSaldoView implements View {
 				try {
 					controller.consultarSaldo(_this());
 				} catch(Exception e) {
-					getViewManager().mostreErro(e.getMessage());
+					controller.getViewManager().mostreErro(e.getMessage());
 				}
 			}
 			
@@ -79,16 +80,6 @@ public class ConsultarSaldoView implements View {
 	@Override
 	public Component getComponent() {
 		return form;
-	}
-	
-	@Override
-	public void setViewManager(ViewManager viewManager) {
-		this.viewManager = viewManager;
-	}
-	
-	@Override
-	public ViewManager getViewManager() {
-		return viewManager;
 	}
 	
 }

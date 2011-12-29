@@ -13,10 +13,8 @@ public class ConsultarSaldoController extends Controller {
 	@Autowired
 	private ConsultarSaldo consultarSaldo;
 	
-	public ConsultarSaldoView init(ViewManager viewManager){
+	public ConsultarSaldoView init(){
 		ConsultarSaldoView view = new ConsultarSaldoView(this);
-		view.setViewManager(viewManager);
-		
 		view.init();
 		return view;
 	}

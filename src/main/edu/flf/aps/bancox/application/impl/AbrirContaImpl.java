@@ -44,7 +44,7 @@ public class AbrirContaImpl implements AbrirConta {
 	}
 
 	@Override
-	public ContaBancaria abraConta(AbrirContaVO vo) throws IllegalAccessException {
+	public ContaBancaria abraConta(AbrirContaVO vo) {
 		
 		// RN1
 		/*
@@ -88,7 +88,7 @@ public class AbrirContaImpl implements AbrirConta {
 	}
 
 	public List<Agencia> getAgencias() {
-		return repositorioAgencia.getAll();
+		return repositorioAgencia.busqueTodos();
 	}
 
 	@Override

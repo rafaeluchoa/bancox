@@ -14,9 +14,8 @@ public class AutenticarClienteController extends Controller {
 	@Autowired
 	private AutenticarCliente autenticarCliente;
 	
-	public AutenticarClienteView init(ViewManager viewManager) {
+	public AutenticarClienteView init() {
 		AutenticarClienteView view = new AutenticarClienteView(this);
-		view.setViewManager(viewManager);
 		view.init(autenticarCliente.gerarTeclasAleatorias());
 		return view;
 	}

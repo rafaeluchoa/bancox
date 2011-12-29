@@ -28,7 +28,7 @@
 	<aop:config proxy-target-class="true">
 		<aop:aspect ref="aspectoExceptionHandlerControllers"> 
 			<aop:around
-				pointcut-ref="classesControllers"
+				pointcut-ref="camadaApresentacao"
 				method="trateException" 
 			/>
 		</aop:aspect>

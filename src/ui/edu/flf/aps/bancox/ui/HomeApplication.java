@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 
 import com.vaadin.Application;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TabSheet;
+import com.vaadin.ui.TabSheet.Tab;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-import com.vaadin.ui.TabSheet.Tab;
 
 /**
  * @author rafaeluchoa
@@ -32,6 +32,9 @@ public class HomeApplication extends Application implements ViewManager {
 	
 	@Autowired
 	private Controller consultarSaldoController;
+	
+	@Autowired
+	private Controller manterAgenciaController;
 
 	private Window mainWindow = new Window("Banco X");
 	private TabSheet tabs = new TabSheet();
@@ -47,12 +50,11 @@ public class HomeApplication extends Application implements ViewManager {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				View view = controller.init(_this());
-				Component c = view.getComponent();
-
-				Tab t = tabs.addTab(c, nome, null);
-				t.setClosable(true);
-				tabs.setSelectedTab(c);
+				
+				controller.setViewManager(_this());
+				View view = controller.init();
+				addView(view, nome);
+				
 			}
 		});
 		return b;
@@ -60,9 +62,12 @@ public class HomeApplication extends Application implements ViewManager {
 
 	private Component crieAcoes() {
 		HorizontalLayout hl = new HorizontalLayout();
+		hl.setSpacing(true);
+		hl.setMargin(true);
 		hl.addComponent(crieAcessoController("Abrir Conta", abrirContaController));
 		hl.addComponent(crieAcessoController("Acessar Conta", autenticarClienteController));
 		hl.addComponent(crieAcessoController("Consultar Saldo", consultarSaldoController));
+		hl.addComponent(crieAcessoController("Manter Agência", manterAgenciaController));
 		return hl;
 	}
 
@@ -80,7 +85,15 @@ public class HomeApplication extends Application implements ViewManager {
 	}
 	
 	@Override
-	public void feche(View view) {
+	public void addView(View view, String nome) {
+		Component c = view.getComponent();
+		Tab t = tabs.addTab(c, nome, null);
+		t.setClosable(true);
+		tabs.setSelectedTab(c);
+	}
+	
+	@Override
+	public void removeView(View view) {
 		tabs.removeComponent(view.getComponent());
 	}
 
@@ -92,6 +105,11 @@ public class HomeApplication extends Application implements ViewManager {
 	@Override
 	public void mostreErro(String erro) {
 		TelaUtils.mostreMsg(mainWindow, erro);
+	}
+	
+	@Override
+	public void mostreAviso(String aviso) {
+		TelaUtils.mostreAviso(mainWindow, aviso);
 	}
 
 	@Override

@@ -21,16 +21,12 @@ public class JPAEclipseLinkSessionCustomizer implements SessionCustomizer {
    Context context = null;
    try {
     context = new InitialContext();
-    if (null != context) {
       connector = (JNDIConnector)session.getLogin().getConnector(); // possible CCE
       // Change from COMPOSITE_NAME_LOOKUP to STRING_LOOKUP
       // Note: if both jta and non-jta elements exist this will only change the first one - and may still result in the COMPOSITE_NAME_LOOKUP being set
       // Make sure only jta-data-source is in persistence.xml with no non-jta-data-source property set
       connector.setLookupType(JNDIConnector.STRING_LOOKUP);
       System.out.println("_JPAEclipseLinkSessionCustomizer: configured " + connector.getName());
-    } else {
-      throw new Exception("_JPAEclipseLinkSessionCustomizer: Context is null");
-    }
    } catch (Exception e) {
     e.printStackTrace();
    }
