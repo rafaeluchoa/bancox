@@ -19,18 +19,12 @@ public class TelaUtils {
 		
 	public static void mostreAviso(Component c, String msg) {
 		getWindowRaiz(c).
-			showNotification(
-				"Erro", msg,
-				Notification.TYPE_WARNING_MESSAGE
-			);
+			showNotification(msg, Notification.TYPE_WARNING_MESSAGE);
 	}
 	
 	public static void mostreErro(Component c, String msg) {
 		getWindowRaiz(c).
-			showNotification(
-				"Erro", msg,
-				Notification.TYPE_ERROR_MESSAGE
-			);
+			showNotification(msg, Notification.TYPE_ERROR_MESSAGE);
 	}
 	
 }

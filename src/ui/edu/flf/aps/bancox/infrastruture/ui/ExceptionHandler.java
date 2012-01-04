@@ -28,12 +28,16 @@ public class ExceptionHandler {
 		Throwable raiz = getRaiz(t);
 		
 		if (raiz instanceof NegocioException) {
-			msg = MessageFormat.format(
-					bundle.getString(t.getClass().getSimpleName()), // pattern
-					((NegocioException)t).getDados()
-			);
+			msg = raiz.getMessage();
+			if(bundle.containsKey(raiz.getClass().getSimpleName())) {
+				msg += " " + MessageFormat.format(
+						bundle.getString(raiz.getClass().getSimpleName()), // pattern
+						((NegocioException)raiz).getDados()
+				);
+			}
+			
 		} else {
-			msg = t.getMessage();
+			msg = raiz.getMessage();
 		}		
 		
 		if(pjp.getTarget() instanceof Controller) {

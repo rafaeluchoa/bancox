@@ -110,7 +110,7 @@ public class HomeApplication extends Application implements ViewManager {
 	
 	@Override
 	public void mostreErro(String erro) {
-		TelaUtils.mostreMsg(mainWindow, erro);
+		TelaUtils.mostreErro(mainWindow, erro);
 	}
 	
 	@Override
