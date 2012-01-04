@@ -3,6 +3,10 @@ package edu.flf.aps.bancox.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -11,9 +15,13 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import edu.flf.aps.bancox.infrastruture.ui.View;
+
 /**
  * @author rafaeluchoa
  */
+@Service
+@Scope("prototype")
 public class AutenticarClienteView implements View {
 	
 	private VerticalLayout form;
@@ -23,11 +31,8 @@ public class AutenticarClienteView implements View {
 	private final TextField tfSenha = new TextField();
 	private final List<Integer[]> digitados = new ArrayList<Integer[]>(); 
 
+	@Autowired
 	private AutenticarClienteController controller;
-
-	public AutenticarClienteView(AutenticarClienteController controller) {
-		this.controller = controller;
-	}
 
 	public AutenticarClienteView _this() {
 		return this;

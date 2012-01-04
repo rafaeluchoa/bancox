@@ -1,5 +1,9 @@
 package edu.flf.aps.bancox.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
@@ -11,13 +15,18 @@ import com.vaadin.ui.Component.Event;
 import com.vaadin.ui.Component.Listener;
 
 import edu.flf.aps.bancox.domain.Agencia;
+import edu.flf.aps.bancox.infrastruture.ui.View;
 
 /**
  * @author rafaeluchoa
  */
+@Service
+@Scope("prototype")
 public class ManterAgenciaFormView implements View {
 	
+	@Autowired
 	private ManterAgenciaController controller;
+	
 	private ManterAgenciaListView listView;
 	
 	private Agencia entidade;
@@ -30,15 +39,6 @@ public class ManterAgenciaFormView implements View {
 	private TextField tfNome = new TextField();
 	private TextField tfNumero = new TextField();
 
-	public ManterAgenciaFormView(
-		ManterAgenciaController controller,
-		ManterAgenciaListView listView,
-		Agencia entidade) {
-		this.controller = controller;
-		this.listView = listView; 
-		this.entidade = entidade;
-	}
-
 	public ManterAgenciaFormView _this() {
 		return this;
 	}
@@ -47,7 +47,13 @@ public class ManterAgenciaFormView implements View {
 		return (String)lbNome.getValue();
 	}
 
-	public void init() {
+	public void init(
+		ManterAgenciaListView listView,
+		Agencia entidade) {
+		
+		this.listView = listView; 
+		this.entidade = entidade;
+		
 		form = new VerticalLayout();
 		form.setSpacing(true);
 		form.setMargin(true);

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.vaadin.data.Item;
 import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.ui.Button;
@@ -16,10 +20,13 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
 import edu.flf.aps.bancox.domain.Agencia;
+import edu.flf.aps.bancox.infrastruture.ui.View;
 
 /**
  * @author rafaeluchoa
  */
+@Service
+@Scope("prototype")
 public class ManterAgenciaListView implements View {
 	
 	//TODO: pegar de um properties
@@ -34,11 +41,8 @@ public class ManterAgenciaListView implements View {
 	private final IndexedContainer container = new IndexedContainer();
 	private final Table table = new Table();
 
+	@Autowired
 	private ManterAgenciaController controller;
-
-	public ManterAgenciaListView(ManterAgenciaController controller) {
-		this.controller = controller;
-	}
 
 	public ManterAgenciaListView _this() {
 		return this;

@@ -12,18 +12,23 @@ import edu.flf.aps.bancox.domain.Pessoa;
 import edu.flf.aps.bancox.domain.PessoaFisica;
 import edu.flf.aps.bancox.domain.PessoaJuridica;
 import edu.flf.aps.bancox.domain.TipoPessoa;
+import edu.flf.aps.bancox.infrastruture.ui.Controller;
+import edu.flf.aps.bancox.infrastruture.ui.ViewFactory;
 
 /**
  * @author rafaeluchoa
  */
 @Service
 public class AbrirContaController extends Controller {
+	
+	@Autowired
+	private ViewFactory viewFactory;
 
 	@Autowired
 	private AbrirConta abrirConta;
 	
 	public AbrirContaView init() {
-		AbrirContaView view = new AbrirContaView(this);
+		AbrirContaView view = viewFactory.createView(AbrirContaView.class);
 		view.init(abrirConta.getAgencias());
 		return view;
 	}

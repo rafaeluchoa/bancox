@@ -1,4 +1,4 @@
-package edu.flf.aps.bancox.ui;
+package edu.flf.aps.bancox.infrastruture.ui;
 
 public abstract class Controller {
 	
@@ -12,6 +12,6 @@ public abstract class Controller {
 		this.viewManager = viewManager;
 	}
 
-	abstract View init();
+	public abstract View init();
 
 }

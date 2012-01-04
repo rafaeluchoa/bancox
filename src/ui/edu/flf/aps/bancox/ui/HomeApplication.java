@@ -15,6 +15,11 @@ import com.vaadin.ui.TabSheet.Tab;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
+import edu.flf.aps.bancox.infrastruture.ui.Controller;
+import edu.flf.aps.bancox.infrastruture.ui.TelaUtils;
+import edu.flf.aps.bancox.infrastruture.ui.View;
+import edu.flf.aps.bancox.infrastruture.ui.ViewManager;
+
 /**
  * @author rafaeluchoa
  */
@@ -22,7 +27,6 @@ import com.vaadin.ui.Window;
 @Service
 @Scope("prototype")
 public class HomeApplication extends Application implements ViewManager {
-
 
 	@Autowired
 	private Controller abrirContaController;
@@ -45,13 +49,15 @@ public class HomeApplication extends Application implements ViewManager {
 
 	private Component crieAcessoController(final String nome,
 			final Controller controller) {
+		
+		controller.setViewManager(_this());
+		
 		Button b = new Button(nome);
 		b.addListener(new ClickListener() {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
 				
-				controller.setViewManager(_this());
 				View view = controller.init();
 				addView(view, nome);
 				
@@ -116,5 +122,5 @@ public class HomeApplication extends Application implements ViewManager {
 	public Window getWindow() {
 		return mainWindow;
 	}
-
+	
 }

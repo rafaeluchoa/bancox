@@ -1,4 +1,4 @@
-package edu.flf.aps.bancox.ui;
+package edu.flf.aps.bancox.infrastruture.ui;
 
 import com.vaadin.ui.Window;
 
@@ -12,4 +12,5 @@ public interface ViewManager {
 	void mostreAviso(String aviso);
 	
 	Window getWindow();
+	
 }

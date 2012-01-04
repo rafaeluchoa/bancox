@@ -22,13 +22,13 @@
 	</aop:config>
 	
 	<!-- Tratamento de erros --> 
-	<bean id="aspectoExceptionHandlerControllers" class="edu.flf.aps.bancox.ui.ExceptionHandler">
+	<bean id="aspectoExceptionHandlerControllers" class="edu.flf.aps.bancox.infrastruture.ui.ExceptionHandler">
 	</bean>
 	
 	<aop:config proxy-target-class="true">
 		<aop:aspect ref="aspectoExceptionHandlerControllers"> 
 			<aop:around
-				pointcut-ref="camadaApresentacao"
+				pointcut-ref="classesControllers"
 				method="trateException" 
 			/>
 		</aop:aspect>

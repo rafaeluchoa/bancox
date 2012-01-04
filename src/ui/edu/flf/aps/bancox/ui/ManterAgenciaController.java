@@ -7,19 +7,24 @@ import org.springframework.stereotype.Service;
 
 import edu.flf.aps.bancox.application.ManterAgencia;
 import edu.flf.aps.bancox.domain.Agencia;
+import edu.flf.aps.bancox.infrastruture.ui.Controller;
+import edu.flf.aps.bancox.infrastruture.ui.ViewFactory;
 
 /**
  * @author rafaeluchoa
  */
 @Service
 public class ManterAgenciaController extends Controller {
+	
+	@Autowired
+	private ViewFactory viewFactory;
 
 	@Autowired
 	private ManterAgencia manterAgencia;
 	
 	public ManterAgenciaListView init() {
-		//TODO: 
-		ManterAgenciaListView view = new ManterAgenciaListView(this);
+		ManterAgenciaListView view = 
+			viewFactory.createView(ManterAgenciaListView.class);
 		view.init();
 		return view;
 	}
@@ -29,14 +34,14 @@ public class ManterAgenciaController extends Controller {
 	}
 	
 	public void mostreIncluir(ManterAgenciaListView listView) {
-		ManterAgenciaFormView view = new ManterAgenciaFormView(this, listView, new Agencia());
-		view.init();
+		ManterAgenciaFormView view = viewFactory.createView(ManterAgenciaFormView.class);
+		view.init(listView, new Agencia());
 		getViewManager().addView(view, view.getNome());
 	}
 
 	public void mostreEditar(ManterAgenciaListView listView, Agencia agencia) {
-		ManterAgenciaFormView view = new ManterAgenciaFormView(this, listView, agencia);
-		view.init();
+		ManterAgenciaFormView view = viewFactory.createView(ManterAgenciaFormView.class);
+		view.init(listView, agencia);
 		getViewManager().addView(view, view.getNome());
 	}
 

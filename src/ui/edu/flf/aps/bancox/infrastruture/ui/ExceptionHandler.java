@@ -1,4 +1,4 @@
-package edu.flf.aps.bancox.ui;
+package edu.flf.aps.bancox.infrastruture.ui;
 
 import java.text.MessageFormat;
 import java.util.ResourceBundle;

@@ -1,4 +1,4 @@
-package edu.flf.aps.bancox.ui;
+package edu.flf.aps.bancox.infrastruture.ui;
 
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Window;

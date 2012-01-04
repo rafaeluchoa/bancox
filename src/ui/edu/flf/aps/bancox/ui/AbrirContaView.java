@@ -3,6 +3,10 @@ package edu.flf.aps.bancox.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.vaadin.data.Item;
 import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.event.FieldEvents.BlurEvent;
@@ -20,10 +24,13 @@ import com.vaadin.ui.VerticalLayout;
 import edu.flf.aps.bancox.domain.Agencia;
 import edu.flf.aps.bancox.domain.TipoContaBancaria;
 import edu.flf.aps.bancox.domain.TipoPessoa;
+import edu.flf.aps.bancox.infrastruture.ui.View;
 
 /**
  * @author rafaeluchoa
  */
+@Service
+@Scope("prototype")
 public class AbrirContaView implements View {
 	
 	private static final String L_AGENCIA_NOME = "L_AGENCIA_NOME";
@@ -47,11 +54,8 @@ public class AbrirContaView implements View {
 
 	// TODO: criar painel para cadastro de enderenco
 
+	@Autowired
 	private AbrirContaController controller;
-
-	public AbrirContaView(AbrirContaController controller) {
-		this.controller = controller;
-	}
 
 	public AbrirContaView _this() {
 		return this;

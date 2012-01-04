@@ -1,5 +1,9 @@
 package edu.flf.aps.bancox.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -8,7 +12,10 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import edu.flf.aps.bancox.infrastruture.ui.View;
 
+@Service
+@Scope("prototype")
 public class ConsultarSaldoView implements View {
 	
 	private VerticalLayout form;
@@ -16,11 +23,8 @@ public class ConsultarSaldoView implements View {
 	private TextField tfNumeroConta = new TextField();
 	private Label lSaldo = new Label();
 	
+	@Autowired
 	private ConsultarSaldoController controller;
-	
-	public ConsultarSaldoView(ConsultarSaldoController controller) {
-		this.controller = controller;
-	}
 	
 	public ConsultarSaldoView _this(){
 		return this;
