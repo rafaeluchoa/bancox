@@ -19,7 +19,9 @@ public class ViewFactoryImpl implements ViewFactory, ApplicationContextAware {
 
 	@Override
 	public <T extends View> T createView(Class<T> clazz) {
-		return applicationContext.getBean(clazz);
+		T t = applicationContext.getBean(clazz);
+		t.init();
+		return t;
 	}
 	
 }

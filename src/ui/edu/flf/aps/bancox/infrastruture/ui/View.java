@@ -15,4 +15,5 @@ public interface View {
 	 */
 	Component getComponent();
 	
+	void init();
 }

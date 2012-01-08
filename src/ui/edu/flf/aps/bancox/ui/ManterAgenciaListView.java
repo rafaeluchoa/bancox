@@ -20,14 +20,14 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
 import edu.flf.aps.bancox.domain.Agencia;
-import edu.flf.aps.bancox.infrastruture.ui.View;
+import edu.flf.aps.bancox.infrastruture.ui.EntityListView;
 
 /**
  * @author rafaeluchoa
  */
 @Service
 @Scope("prototype")
-public class ManterAgenciaListView implements View {
+public class ManterAgenciaListView implements EntityListView {
 	
 	//TODO: pegar de um properties
 	private static final String NOME = "Cadastro de Agências";
@@ -61,7 +61,7 @@ public class ManterAgenciaListView implements View {
 		form.addComponent(crieBotoes());
 		form.addComponent(crieTabela());
 		
-		atualize();
+		refresh();
 	}
 	
 	private HorizontalLayout crieBotoes() {
@@ -103,7 +103,7 @@ public class ManterAgenciaListView implements View {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				atualize();
+				refresh();
 			}
 		});
 		botoes.addComponent(atualizar);
@@ -148,7 +148,7 @@ public class ManterAgenciaListView implements View {
 			entidades.add((Agencia)lista.get(id));
 		}
 		controller.exclua(entidades);
-		atualize();
+		refresh();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class ManterAgenciaListView implements View {
 		}
 	}
 	
-	public void atualize() {
+	public void refresh() {
 		lista = controller.busqueTodos();
 		if(lista == null) {
 			lista = new ArrayList<Agencia>(0);

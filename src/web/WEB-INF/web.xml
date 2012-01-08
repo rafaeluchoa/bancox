@@ -5,7 +5,6 @@
     <param-name>productionMode</param-name>
     <param-value>false</param-value>
   </context-param>
-  <!-- ,classpath*:META-INF/edu.flf.spring-exceptions.xml -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath*:META-INF/edu.flf.spring-base.xml,classpath*:META-INF/edu.flf.spring-persistence.xml,classpath*:META-INF/edu.flf.spring-exceptions.xml</param-value>

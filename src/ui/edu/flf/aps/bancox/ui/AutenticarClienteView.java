@@ -39,7 +39,7 @@ public class AutenticarClienteView implements View {
 	}
 
 	@SuppressWarnings("serial")
-	public void init(List<Integer[]> digitos) {
+	public void init() {
 		form = new VerticalLayout();
 		form.setSpacing(true);
 		form.setMargin(true);
@@ -52,6 +52,7 @@ public class AutenticarClienteView implements View {
 		form.addComponent(new Label("Senha (Use o teclado abaixo): "));
 		form.addComponent(tfSenha);
 
+		List<Integer[]> digitos = controller.gerarTeclasAleatorias();
 		form.addComponent(new Label("Teclado Numérico: "));
 		for(final Integer[] tecla : digitos) {
 			Button botao = new Button(tecla[0] + " - " + tecla[1]);

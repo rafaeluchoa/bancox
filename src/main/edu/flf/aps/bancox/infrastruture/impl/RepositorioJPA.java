@@ -23,7 +23,6 @@ public class RepositorioJPA<E extends Entidade> implements Repositorio<E> {
 
 	@SuppressWarnings("unchecked")
 	public RepositorioJPA() {
-		// TODO: verificar forma melhor
 		clazz = (Class<E>) ReflectionUtils.getTypeArguments(RepositorioJPA.class,
 				getClass()).get(0);
 	}

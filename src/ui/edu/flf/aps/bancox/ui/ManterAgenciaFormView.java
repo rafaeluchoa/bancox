@@ -6,23 +6,24 @@ import org.springframework.stereotype.Service;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.Component.Event;
+import com.vaadin.ui.Component.Listener;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Component.Event;
-import com.vaadin.ui.Component.Listener;
 
 import edu.flf.aps.bancox.domain.Agencia;
-import edu.flf.aps.bancox.infrastruture.ui.View;
+import edu.flf.aps.bancox.infrastruture.ui.EntityFormView;
+import edu.flf.aps.bancox.infrastruture.ui.EntityListView;
 
 /**
  * @author rafaeluchoa
  */
 @Service
 @Scope("prototype")
-public class ManterAgenciaFormView implements View {
+public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 	
 	@Autowired
 	private ManterAgenciaController controller;
@@ -43,27 +44,13 @@ public class ManterAgenciaFormView implements View {
 		return this;
 	}
 	
-	public String getNome() {
-		return (String)lbNome.getValue();
-	}
-
-	public void init(
-		ManterAgenciaListView listView,
-		Agencia entidade) {
-		
-		this.listView = listView; 
-		this.entidade = entidade;
-		
+	public void init() {
 		form = new VerticalLayout();
 		form.setSpacing(true);
 		form.setMargin(true);
 		
-		lbNome.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Agência");
-		
 		form.addComponent(lbNome);
 		form.addComponent(crieFormulario());
-		
-		setEntidade(entidade);
 	}
 	
 	private VerticalLayout crieFormulario() {
@@ -72,11 +59,9 @@ public class ManterAgenciaFormView implements View {
 		grid.setSpacing(true);
 		grid.setMargin(true);
 		
-		if(entidade.getId() != null) {
-			i++;
-			grid.addComponent(new Label("Id:"), 0, i);
-			grid.addComponent(lbId, 1, i);
-		}
+		i++;
+		grid.addComponent(new Label("Id:"), 0, i);
+		grid.addComponent(lbId, 1, i);
 		
 		i++;
 		grid.addComponent(new Label("Nome:"), 0, i);
@@ -96,8 +81,6 @@ public class ManterAgenciaFormView implements View {
 			@Override
 			public void componentEvent(Event event) {
 				controller.salve(_this());
-				// TODO: analisar melhor forma de integrar duas views pelo controller
-				listView.atualize();
 			}
 		});
 		botoes.addComponent(salvar);
@@ -108,7 +91,6 @@ public class ManterAgenciaFormView implements View {
 			@Override
 			public void componentEvent(Event event) {
 				controller.cancele(_this());
-				listView.atualize();
 			}
 		});
 		botoes.addComponent(cancelar);
@@ -122,12 +104,13 @@ public class ManterAgenciaFormView implements View {
 		return(layout);
 	}
 	
-	public void setEntidade(Agencia entidade) {
+	public void setEntity(Agencia entidade) {
 		if(entidade == null) {
 			return;
 		}
 		
 		this.entidade = entidade;
+		lbNome.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Agência");
 		
 		if(entidade.getId() != null) {
 			lbId.setValue(String.valueOf(entidade.getId()));
@@ -141,7 +124,7 @@ public class ManterAgenciaFormView implements View {
 	}
 	
 	//TODO: verificar se essa logica precisa ficar aqui
-	public Agencia getEntidade() {
+	public Agencia getEntity() {
 		Agencia retorno = entidade;
 		
 		if(retorno == null) {
@@ -156,6 +139,21 @@ public class ManterAgenciaFormView implements View {
 	
 	public Component getComponent() {
 		return form;
+	}
+
+	@Override
+	public void setEntityListView(EntityListView entityListView) {
+		listView = (ManterAgenciaListView) entityListView;
+	}
+
+	@Override
+	public EntityListView getEntityListView() {
+		return listView;
+	}
+
+	@Override
+	public String getViewName() {
+		return (String)lbNome.getValue();
 	}
 	
 

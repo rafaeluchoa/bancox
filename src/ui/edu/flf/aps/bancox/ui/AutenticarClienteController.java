@@ -1,5 +1,7 @@
 package edu.flf.aps.bancox.ui;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +23,16 @@ public class AutenticarClienteController extends Controller {
 	
 	public AutenticarClienteView init() {
 		AutenticarClienteView view = viewFactory.createView(AutenticarClienteView.class);
-		view.init(autenticarCliente.gerarTeclasAleatorias());
+		view.init();
 		return view;
 	}
 	
 	public void autenticar(AutenticarClienteView view) {
 		
+	}
+	
+	public List<Integer[]> gerarTeclasAleatorias() {
+		return autenticarCliente.gerarTeclasAleatorias();
 	}
 
 }

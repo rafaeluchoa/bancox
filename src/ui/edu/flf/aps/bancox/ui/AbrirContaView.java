@@ -62,7 +62,7 @@ public class AbrirContaView implements View {
 	}
 
 	@SuppressWarnings("serial")
-	public void init(List<Agencia> agencias) {
+	public void init() {
 		form = new VerticalLayout();
 		form.setSpacing(true);
 		form.setMargin(true);
@@ -78,6 +78,7 @@ public class AbrirContaView implements View {
 		
 		cbAgencias.setContainerDataSource(containerAgencias);
 		
+		List<Agencia> agencias = controller.busqueAgencias();
 		for(Agencia a : agencias) {
 			Item item = cbAgencias.addItem(a);
 			item.getItemProperty(L_AGENCIA_NOME).setValue(a.getNome());
