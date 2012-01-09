@@ -18,9 +18,7 @@ public class ConsultarSaldoController extends Controller {
 	private ConsultarSaldo consultarSaldo;
 	
 	public ConsultarSaldoView init(){
-		ConsultarSaldoView view = viewFactory.createView(ConsultarSaldoView.class);
-		view.init();
-		return view;
+		return viewFactory.createView(ConsultarSaldoView.class);
 	}
 
 	public void consultarSaldo(ConsultarSaldoView view) {

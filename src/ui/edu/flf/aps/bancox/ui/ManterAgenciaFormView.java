@@ -51,9 +51,10 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		
 		form.addComponent(lbNome);
 		form.addComponent(crieFormulario());
+		form.addComponent(crieBotoes());
 	}
 	
-	private VerticalLayout crieFormulario() {
+	private GridLayout crieFormulario() {
 		int i = -1;
 		GridLayout grid = new GridLayout(2, 3);
 		grid.setSpacing(true);
@@ -71,7 +72,11 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		grid.addComponent(new Label("Número:"), 0, i);
 		grid.addComponent(tfNumero, 1, i);
 		
-		// 
+		return grid;
+	}
+	
+	private Component crieBotoes() {
+		 
 		HorizontalLayout botoes = new HorizontalLayout();
 		botoes.setSpacing(true);
 		
@@ -95,16 +100,11 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		});
 		botoes.addComponent(cancelar);
 		
-		//
-		VerticalLayout layout = new VerticalLayout();
-		layout.setSpacing(true);
-		layout.addComponent(grid);
-		layout.addComponent(botoes);
-		
-		return(layout);
+		return(botoes);
 	}
 	
 	public void setEntity(Agencia entidade) {
+		
 		if(entidade == null) {
 			return;
 		}

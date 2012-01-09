@@ -1,7 +1,5 @@
 package edu.flf.aps.bancox.infrastruture.ui;
 
-
-
 /**
  * ListView
  * 

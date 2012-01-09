@@ -22,9 +22,7 @@ public class AutenticarClienteController extends Controller {
 	private AutenticarCliente autenticarCliente;
 	
 	public AutenticarClienteView init() {
-		AutenticarClienteView view = viewFactory.createView(AutenticarClienteView.class);
-		view.init();
-		return view;
+		return viewFactory.createView(AutenticarClienteView.class);
 	}
 	
 	public void autenticar(AutenticarClienteView view) {

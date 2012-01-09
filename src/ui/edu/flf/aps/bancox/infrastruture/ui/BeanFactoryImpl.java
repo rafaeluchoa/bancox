@@ -5,9 +5,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
+import edu.flf.aps.bancox.infrastruture.Entidade;
+import edu.flf.aps.bancox.infrastruture.Repositorio;
+import edu.flf.aps.bancox.infrastruture.app.RepositoryFactory;
 
 @Service
-public class ViewFactoryImpl implements ViewFactory, ApplicationContextAware {
+public class BeanFactoryImpl implements ViewFactory, RepositoryFactory, ApplicationContextAware {
 	
 	private ApplicationContext applicationContext;
 	
@@ -23,5 +26,11 @@ public class ViewFactoryImpl implements ViewFactory, ApplicationContextAware {
 		t.init();
 		return t;
 	}
+	
+	@Override
+	public <E extends Entidade, T extends Repositorio<E>> T createRepository(Class<T> clazz) {
+		return applicationContext.getBean(clazz);
+	}
+	
 	
 }

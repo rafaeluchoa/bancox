@@ -28,9 +28,7 @@ public class AbrirContaController extends Controller {
 	private AbrirConta abrirConta;
 	
 	public AbrirContaView init() {
-		AbrirContaView view = viewFactory.createView(AbrirContaView.class);
-		view.init();
-		return view;
+		return viewFactory.createView(AbrirContaView.class);
 	}
 	
 	public List<Agencia> busqueAgencias() {

@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.vaadin.data.Item;
-import com.vaadin.data.util.IndexedContainer;
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Component.Event;
@@ -31,14 +30,14 @@ public class ManterAgenciaListView implements EntityListView {
 	
 	//TODO: pegar de um properties
 	private static final String NOME = "Cadastro de Agências";
-	private static enum C_AGENCIA { ID, NOME, NUMERO };
+	private static final String[] C_AGENCIA = new String[] { "id", "nome", "numero" };
 	private static final String[] L_AGENCIA = new String[] { "Id", "Nome", "Número" };
 
 	// TODO: incluir form para ter campos de filtro, pesquisa
 	private VerticalLayout form;
 
-	private List<Agencia> lista = new ArrayList<Agencia>(0);
-	private final IndexedContainer container = new IndexedContainer();
+	private final BeanItemContainer<Agencia> container = 
+			new BeanItemContainer<Agencia>(Agencia.class);
 	private final Table table = new Table();
 
 	@Autowired
@@ -112,14 +111,10 @@ public class ManterAgenciaListView implements EntityListView {
 	}
 	
 	private Table crieTabela() {
-		for(C_AGENCIA coluna : C_AGENCIA.values()) {
-			container.addContainerProperty(coluna, String.class, null);			
-		}
 		table.setContainerDataSource(container);
-		
-		table.setVisibleColumns(C_AGENCIA.values());
+		table.setVisibleColumns(C_AGENCIA);
 		table.setColumnHeaders(L_AGENCIA);
-		table.setWidth("500px");
+		table.setWidth("650px");
 		
 		table.setPageLength(10);
 		table.setSelectable(true);
@@ -134,37 +129,31 @@ public class ManterAgenciaListView implements EntityListView {
 	
 	@SuppressWarnings("unchecked")
 	public void excluaSelecionados() {
-		Set<Integer> selecao = (Set<Integer>)table.getValue();
+		Set<Agencia> selecao = (Set<Agencia>)table.getValue();
 		if(selecao.isEmpty()) {
 			controller.getViewManager().mostreAviso("É necessário selecionar alguma linha para exclusão.");
 			return;
 		}
-		exclua(selecao);
-	}
-	
-	private void exclua(Set<Integer> ids) {
 		List<Agencia> entidades = new ArrayList<Agencia>();
-		for(Integer id : ids) {
-			entidades.add((Agencia)lista.get(id));
-		}
+		entidades.addAll(selecao);
 		controller.exclua(entidades);
 		refresh();
 	}
 	
+	
 	@SuppressWarnings("unchecked")
 	private void editeSelecionado() {
-		Set<Integer> selecao = (Set<Integer>)table.getValue();
+		Set<Agencia> selecao = (Set<Agencia>)table.getValue();
 		if(selecao.size() == 0 || selecao.size() > 1) {
 			controller.getViewManager().mostreAviso("Selecione uma linha para edição.");
 		} else {
-			Integer id = (Integer)selecao.iterator().next();
-			Agencia entidade = lista.get(id);
+			Agencia entidade = (Agencia)selecao.iterator().next();
 			controller.mostreEditar(this, entidade);
 		}
 	}
 	
 	public void refresh() {
-		lista = controller.busqueTodos();
+		List<Agencia> lista = controller.busqueTodos();
 		if(lista == null) {
 			lista = new ArrayList<Agencia>(0);
 		}
@@ -172,15 +161,8 @@ public class ManterAgenciaListView implements EntityListView {
 		table.removeAllItems();
 		container.removeAllItems();
 		
-		for(int i = 0; i < lista.size(); i++) {
-			
-			Agencia entidade = lista.get(i);
-			Item item = container.addItem(i);
-			
-			item.getItemProperty(C_AGENCIA.ID).setValue(entidade.getId());
-            item.getItemProperty(C_AGENCIA.NOME).setValue(entidade.getNome());
-            item.getItemProperty(C_AGENCIA.NUMERO).setValue(entidade.getNumero());
-            
+		for(Agencia e : lista) {
+			container.addBean(e);
 		}
 	}
 
