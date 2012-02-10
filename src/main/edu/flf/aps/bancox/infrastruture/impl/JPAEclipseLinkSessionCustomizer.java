@@ -1,6 +1,5 @@
 package edu.flf.aps.bancox.infrastruture.impl;
 
-import javax.naming.Context;
 import javax.naming.InitialContext;
 
 import org.eclipse.persistence.config.SessionCustomizer;
@@ -18,9 +17,8 @@ public class JPAEclipseLinkSessionCustomizer implements SessionCustomizer {
    */
   public void customize(Session session) throws Exception {
    JNDIConnector connector = null;
-   Context context = null;
    try {
-    context = new InitialContext();
+	   new InitialContext();
       connector = (JNDIConnector)session.getLogin().getConnector(); // possible CCE
       // Change from COMPOSITE_NAME_LOOKUP to STRING_LOOKUP
       // Note: if both jta and non-jta elements exist this will only change the first one - and may still result in the COMPOSITE_NAME_LOOKUP being set
