@@ -6,13 +6,12 @@
 	<persistence-unit name="bancox" transaction-type="RESOURCE_LOCAL">
 		<!--
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<jta-data-source>java:comp/env/jdbc/bancox</jta-data-source>
-		 <mapping-file>META-INF/orm-consultas.xml</mapping-file> -->
+		<jta-data-source>java:comp/env/jdbc/bancox</jta-data-source> -->
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 		<properties> 
 			<!-- 
-			<property name="eclipselink.session.customizer" value="edu.flf.aps.bancox.infrastruture.impl.JPAEclipseLinkSessionCustomizer"/>
+			<property name="eclipselink.session.customizer" value="com.naskar.infrastructure.eclipselink.JPAEclipseLinkSessionCustomizer"/>
 			 -->
 
 			<property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.PostgreSQLPlatform" />

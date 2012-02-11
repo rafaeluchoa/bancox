@@ -6,6 +6,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/config"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/ui"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/infra"/>
         <property name="java-output-path" value="/bancox/src/web/WEB-INF/classes"/>
         <property name="context-root" value="bancox"/>
     </wb-module>
