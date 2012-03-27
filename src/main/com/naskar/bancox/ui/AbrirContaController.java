@@ -3,6 +3,7 @@ package com.naskar.bancox.ui;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.naskar.bancox.domain.Agencia;
@@ -20,6 +21,7 @@ import com.naskar.infrastructure.ui.ViewFactory;
  * @author rafaeluchoa
  */
 @Service
+@Scope("prototype")
 public class AbrirContaController extends Controller {
 	
 	@Autowired

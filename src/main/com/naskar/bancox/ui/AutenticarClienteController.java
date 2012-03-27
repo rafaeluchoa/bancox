@@ -3,6 +3,7 @@ package com.naskar.bancox.ui;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.naskar.bancox.service.AutenticarCliente;
@@ -14,6 +15,7 @@ import com.naskar.infrastructure.ui.ViewFactory;
  * @author rafaeluchoa
  */
 @Service
+@Scope("prototype")
 public class AutenticarClienteController extends Controller {
 	
 	@Autowired

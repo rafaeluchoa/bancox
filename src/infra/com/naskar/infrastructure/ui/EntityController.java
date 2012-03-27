@@ -3,17 +3,16 @@ package com.naskar.infrastructure.ui;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.naskar.infrastructure.domain.EntityDomain;
 import com.naskar.infrastructure.service.EntityDomainService;
+import com.naskar.infrastructure.spring.BeanFactory;
 import com.naskar.infrastructure.utils.ReflectionUtils;
 
 
 /**
  * @author rafaeluchoa
  */
-@Service
 public class EntityController<
 	E extends EntityDomain, 
 	ListView extends EntityListView, 
@@ -23,9 +22,12 @@ public class EntityController<
 	private Class<E> clazzE;
 	private Class<ListView> clazzListView;
 	private Class<FormView> clazzFormView;
-
-	@Autowired
+	private Class<EntityService> clazzServiceView;
+	
 	private EntityService entityService;
+	
+	@Autowired
+	private BeanFactory beanFactory;
 	
 	@SuppressWarnings("unchecked")
 	public EntityController() {
@@ -34,6 +36,9 @@ public class EntityController<
 		clazzE = (Class<E>) clazzes.get(0);
 		clazzListView = (Class<ListView>) clazzes.get(1);
 		clazzFormView = (Class<FormView>) clazzes.get(2);
+		clazzServiceView = (Class<EntityService>) clazzes.get(3);
+		
+		entityService = beanFactory.createBean(clazzServiceView); 
 	}
 	
 	public ListView init() {
