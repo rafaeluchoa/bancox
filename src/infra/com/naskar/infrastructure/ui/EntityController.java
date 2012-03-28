@@ -1,6 +1,10 @@
 package com.naskar.infrastructure.ui;
 
 import java.util.List;
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +36,9 @@ public class EntityController<
 	
 	@Autowired
 	private ViewFactory viewFactory;
+	
+	@Autowired
+    private Validator validator;
 	
 	@SuppressWarnings("unchecked")
 	public EntityController() {
@@ -81,8 +88,24 @@ public class EntityController<
 		view.setEntity(entidade);
 		listView.getViewManager().addView(view, view.getViewName());
 	}
+	
+	// TODO: criar aspecto para efetuar validacao
+	private boolean validate(FormView formView) {
+		Set<ConstraintViolation<E>> violations = 
+				(Set<ConstraintViolation<E>>) validator.validate(formView.getEntity());
+		for (ConstraintViolation<E> violation : violations) {
+		    String propertyPath = violation.getPropertyPath().toString();
+		    String message = violation.getMessage();
+		    formView.getViewManager().showError("Campo inválido: '" + propertyPath + "': " + message);
+		}
+		return violations.isEmpty();
+	}
 
 	public void save(FormView formView) {
+		if(!validate(formView)) {
+			return;
+		}
+		
 		EntityDomain entidade = formView.getEntity();
 		if(entidade.getId() == null) {
 			entityService.insert(formView.getEntity());
@@ -93,6 +116,7 @@ public class EntityController<
 			formView.getViewManager().removeView(formView);
 			formView.getViewManager().showMsg("Alteração efetuada com sucesso.");
 		}
+		
 		EntityListView entityListView = formView.getEntityListView();
 		if(entityListView != null) {
 			entityListView.refresh();

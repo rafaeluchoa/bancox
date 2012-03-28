@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.naskar.infrastructure.domain.EntityDomain;
 
@@ -22,8 +25,15 @@ public class Endereco implements EntityDomain {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ENDERECO_ID_GENERATOR")
 	@Column(name="id", unique=true, nullable=false)
 	private Long id;
+	
+	@NotNull
+	@NotBlank
 	private String logradouro;
+	
+	@NotNull
+	@NotBlank
 	private String numero;
+	
 	private String bairro;
 	private String cidade;
 	private String uf;

@@ -17,6 +17,9 @@
 	"
 	default-autowire="byName">
 	
+	<bean id="validator" name="validator"
+      	class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
 	<aop:config>
 		<aop:pointcut id="classesControllers" expression="execution(* com.naskar..*.ui..*Controller.*(..))" />
 	</aop:config>
