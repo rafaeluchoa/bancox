@@ -22,7 +22,7 @@ import com.naskar.infrastructure.ui.ViewFactory;
  */
 @Service
 @Scope("prototype")
-public class AbrirContaController extends Controller {
+public class AbrirContaController implements Controller {
 	
 	@Autowired
 	private ViewFactory viewFactory;
@@ -57,7 +57,7 @@ public class AbrirContaController extends Controller {
 		
 		abrirConta.abraConta(vo);
 		
-		getViewManager().removeView(view);
+		view.getViewManager().removeView(view);
 	}
 	
 	public List<Agencia> getAgencias() {

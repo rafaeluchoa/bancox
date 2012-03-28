@@ -39,6 +39,9 @@ public class HomeApplication extends Application implements ViewManager {
 	
 	@Autowired
 	private Controller manterAgenciaController;
+	
+	@Autowired
+	private Controller manterEnderecoController;
 
 	private Window mainWindow = new Window("Banco X");
 	private TabSheet tabs = new TabSheet();
@@ -50,8 +53,6 @@ public class HomeApplication extends Application implements ViewManager {
 	private Component crieAcessoController(final String nome,
 			final Controller controller) {
 		
-		controller.setViewManager(_this());
-		
 		Button b = new Button(nome);
 		b.addListener(new ClickListener() {
 
@@ -59,6 +60,7 @@ public class HomeApplication extends Application implements ViewManager {
 			public void buttonClick(ClickEvent event) {
 				
 				View view = controller.init();
+				view.setViewManager(_this());
 				addView(view, nome);
 				
 			}
@@ -74,6 +76,7 @@ public class HomeApplication extends Application implements ViewManager {
 		hl.addComponent(crieAcessoController("Acessar Conta", autenticarClienteController));
 		hl.addComponent(crieAcessoController("Consultar Saldo", consultarSaldoController));
 		hl.addComponent(crieAcessoController("Manter Agência", manterAgenciaController));
+		hl.addComponent(crieAcessoController("Manter Endereço", manterEnderecoController));
 		return hl;
 	}
 

@@ -10,7 +10,7 @@ import com.naskar.infrastructure.ui.ViewFactory;
 
 @Service
 @Scope("prototype")
-public class ConsultarSaldoController extends Controller {
+public class ConsultarSaldoController implements Controller {
 	
 	@Autowired
 	private ViewFactory viewFactory;

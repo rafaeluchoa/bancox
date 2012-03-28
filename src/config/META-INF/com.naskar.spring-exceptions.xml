@@ -21,7 +21,7 @@
 		<aop:pointcut id="classesControllers" expression="execution(* com.naskar..*.ui..*Controller.*(..))" />
 	</aop:config>
 	
-	<!-- Tratamento de erros --> 
+	<!-- Tratamento de erros  
 	<bean id="aspectoExceptionHandlerControllers" class="com.naskar.infrastructure.exception.ExceptionHandler">
 	</bean>
 	
@@ -33,5 +33,6 @@
 			/>
 		</aop:aspect>
 	</aop:config>
+	-->
 	
 </beans>

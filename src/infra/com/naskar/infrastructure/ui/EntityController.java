@@ -2,13 +2,13 @@ package com.naskar.infrastructure.ui;
 
 import java.util.List;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.naskar.infrastructure.domain.EntityDomain;
 import com.naskar.infrastructure.service.EntityDomainService;
 import com.naskar.infrastructure.spring.BeanFactory;
 import com.naskar.infrastructure.utils.ReflectionUtils;
-
 
 /**
  * @author rafaeluchoa
@@ -17,7 +17,8 @@ public class EntityController<
 	E extends EntityDomain, 
 	ListView extends EntityListView, 
 	FormView extends EntityFormView<E>,
-	EntityService extends EntityDomainService<E>> extends Controller {
+	EntityService extends EntityDomainService<E>>  
+	implements Controller, InitializingBean {
 	
 	private Class<E> clazzE;
 	private Class<ListView> clazzListView;
@@ -29,6 +30,9 @@ public class EntityController<
 	@Autowired
 	private BeanFactory beanFactory;
 	
+	@Autowired
+	private ViewFactory viewFactory;
+	
 	@SuppressWarnings("unchecked")
 	public EntityController() {
 		List<Class<?>> clazzes = 
@@ -37,10 +41,21 @@ public class EntityController<
 		clazzListView = (Class<ListView>) clazzes.get(1);
 		clazzFormView = (Class<FormView>) clazzes.get(2);
 		clazzServiceView = (Class<EntityService>) clazzes.get(3);
-		
-		entityService = beanFactory.createBean(clazzServiceView); 
 	}
 	
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		entityService = beanFactory.createBean(clazzServiceView);
+	}
+	
+	public ViewFactory getViewFactory() {
+		return viewFactory;
+	}
+
+	public void setViewFactory(ViewFactory viewFactory) {
+		this.viewFactory = viewFactory;
+	}
+
 	public ListView init() {
 		return getViewFactory().createView(clazzListView);
 	}
@@ -61,21 +76,22 @@ public class EntityController<
 
 	public void showEdit(ListView listView, E entidade) {
 		FormView view = getViewFactory().createView(clazzFormView);
+		view.setViewManager(listView.getViewManager());
 		view.setEntityListView(listView);
 		view.setEntity(entidade);
-		getViewManager().addView(view, view.getViewName());
+		listView.getViewManager().addView(view, view.getViewName());
 	}
 
 	public void save(FormView formView) {
 		EntityDomain entidade = formView.getEntity();
 		if(entidade.getId() == null) {
 			entityService.insert(formView.getEntity());
-			getViewManager().removeView(formView);
-			getViewManager().showMsg("Inclusão efetuada com sucesso.");	
+			formView.getViewManager().removeView(formView);
+			formView.getViewManager().showMsg("Inclusão efetuada com sucesso.");	
 		} else {
 			entityService.update(formView.getEntity());
-			getViewManager().removeView(formView);
-			getViewManager().showMsg("Alteração efetuada com sucesso.");
+			formView.getViewManager().removeView(formView);
+			formView.getViewManager().showMsg("Alteração efetuada com sucesso.");
 		}
 		EntityListView entityListView = formView.getEntityListView();
 		if(entityListView != null) {
@@ -84,18 +100,18 @@ public class EntityController<
 	}
 
 	public void cancel(FormView formView) {
-		getViewManager().removeView(formView);
+		formView.getViewManager().removeView(formView);
 		EntityListView entityListView = formView.getEntityListView();
 		if(entityListView != null) {
 			entityListView.refresh();
 		}
 	}
 	
-	public void removeAll(List<E> entidades) {
+	public void removeAll(ListView listView, List<E> entidades) {
 		for(E entidade : entidades) {
 			entityService.remove(entidade);
 		}
-		getViewManager().showMsg("Exclusão efetuada com sucesso.");
+		listView.getViewManager().showMsg("Exclusão efetuada com sucesso.");
 	}
 
 }

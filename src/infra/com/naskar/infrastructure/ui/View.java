@@ -16,4 +16,9 @@ public interface View {
 	Component getComponent();
 	
 	void init();
+	
+	ViewManager getViewManager();
+	
+	void setViewManager(ViewManager viewManager);
+	
 }

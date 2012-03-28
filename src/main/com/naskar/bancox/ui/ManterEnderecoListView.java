@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.naskar.bancox.domain.Agencia;
+import com.naskar.bancox.domain.Endereco;
 import com.naskar.infrastructure.ui.EntityListView;
 import com.naskar.infrastructure.ui.ViewManager;
 import com.vaadin.data.util.BeanItemContainer;
@@ -27,22 +27,22 @@ import com.vaadin.ui.VerticalLayout;
  */
 @Service
 @Scope("prototype")
-public class ManterAgenciaListView implements EntityListView {
+public class ManterEnderecoListView implements EntityListView {
 	
 	//TODO: pegar de um properties
-	private static final String NOME = "Cadastro de Agências";
-	private static final String[] C_AGENCIA = new String[] { "id", "nome", "numero" };
-	private static final String[] L_AGENCIA = new String[] { "Id", "Nome", "Número" };
+	private static final String NOME = "Cadastro de Endereço";
+	private static final String[] C_Endereco = new String[] { "id", "logradouro", "numero" };
+	private static final String[] L_Endereco = new String[] { "Id", "Logradouro", "Número" };
 
 	// TODO: incluir form para ter campos de filtro, pesquisa
 	private VerticalLayout form;
 
-	private final BeanItemContainer<Agencia> container = 
-			new BeanItemContainer<Agencia>(Agencia.class);
+	private final BeanItemContainer<Endereco> container = 
+			new BeanItemContainer<Endereco>(Endereco.class);
 	private final Table table = new Table();
 
 	@Autowired
-	private ManterAgenciaController controller;
+	private ManterEnderecoController controller;
 	
 	private ViewManager viewManager;
 	
@@ -54,7 +54,7 @@ public class ManterAgenciaListView implements EntityListView {
 		this.viewManager = viewManager;
 	}
 
-	public ManterAgenciaListView _this() {
+	public ManterEnderecoListView view() {
 		return this;
 	}
 	
@@ -83,7 +83,7 @@ public class ManterAgenciaListView implements EntityListView {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.showInsert(_this());
+				controller.showInsert(view());
 			}
 		});
 		botoes.addComponent(novo);
@@ -123,8 +123,8 @@ public class ManterAgenciaListView implements EntityListView {
 	
 	private Table crieTabela() {
 		table.setContainerDataSource(container);
-		table.setVisibleColumns(C_AGENCIA);
-		table.setColumnHeaders(L_AGENCIA);
+		table.setVisibleColumns(C_Endereco);
+		table.setColumnHeaders(L_Endereco);
 		table.setWidth("650px");
 		
 		table.setPageLength(10);
@@ -140,12 +140,12 @@ public class ManterAgenciaListView implements EntityListView {
 	
 	@SuppressWarnings("unchecked")
 	public void excluaSelecionados() {
-		Set<Agencia> selecao = (Set<Agencia>)table.getValue();
+		Set<Endereco> selecao = (Set<Endereco>)table.getValue();
 		if(selecao.isEmpty()) {
 			getViewManager().showWarn("É necessário selecionar alguma linha para exclusão.");
 			return;
 		}
-		List<Agencia> entidades = new ArrayList<Agencia>();
+		List<Endereco> entidades = new ArrayList<Endereco>();
 		entidades.addAll(selecao);
 		controller.removeAll(this, entidades);
 		refresh();
@@ -154,25 +154,25 @@ public class ManterAgenciaListView implements EntityListView {
 	
 	@SuppressWarnings("unchecked")
 	private void editeSelecionado() {
-		Set<Agencia> selecao = (Set<Agencia>)table.getValue();
+		Set<Endereco> selecao = (Set<Endereco>)table.getValue();
 		if(selecao.size() == 0 || selecao.size() > 1) {
 			getViewManager().showWarn("Selecione uma linha para edição.");
 		} else {
-			Agencia entidade = (Agencia)selecao.iterator().next();
+			Endereco entidade = (Endereco)selecao.iterator().next();
 			controller.showEdit(this, entidade);
 		}
 	}
 	
 	public void refresh() {
-		List<Agencia> lista = controller.findAll();
+		List<Endereco> lista = controller.findAll();
 		if(lista == null) {
-			lista = new ArrayList<Agencia>(0);
+			lista = new ArrayList<Endereco>(0);
 		}
 		
 		table.removeAllItems();
 		container.removeAllItems();
 		
-		for(Agencia e : lista) {
+		for(Endereco e : lista) {
 			container.addBean(e);
 		}
 	}

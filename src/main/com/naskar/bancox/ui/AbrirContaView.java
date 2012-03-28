@@ -11,6 +11,7 @@ import com.naskar.bancox.domain.Agencia;
 import com.naskar.bancox.domain.TipoContaBancaria;
 import com.naskar.bancox.domain.TipoPessoa;
 import com.naskar.infrastructure.ui.View;
+import com.naskar.infrastructure.ui.ViewManager;
 import com.vaadin.data.Item;
 import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.event.FieldEvents.BlurEvent;
@@ -56,6 +57,16 @@ public class AbrirContaView implements View {
 
 	@Autowired
 	private AbrirContaController controller;
+	
+	private ViewManager viewManager;
+	
+	public ViewManager getViewManager() {
+		return viewManager;
+	}
+
+	public void setViewManager(ViewManager viewManager) {
+		this.viewManager = viewManager;
+	}
 
 	public AbrirContaView _this() {
 		return this;
@@ -138,7 +149,7 @@ public class AbrirContaView implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				controller.abraConta(_this());
-				controller.getViewManager().showMsg("Conta aberta com sucesso.");
+				getViewManager().showMsg("Conta aberta com sucesso.");
 			}
 		});
 		form.addComponent(new Label(""));

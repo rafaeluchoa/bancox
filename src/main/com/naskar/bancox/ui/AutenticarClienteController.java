@@ -16,7 +16,7 @@ import com.naskar.infrastructure.ui.ViewFactory;
  */
 @Service
 @Scope("prototype")
-public class AutenticarClienteController extends Controller {
+public class AutenticarClienteController implements Controller {
 	
 	@Autowired
 	private ViewFactory viewFactory;

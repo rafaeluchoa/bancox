@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.naskar.infrastructure.ui.View;
+import com.naskar.infrastructure.ui.ViewManager;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -33,6 +34,16 @@ public class AutenticarClienteView implements View {
 
 	@Autowired
 	private AutenticarClienteController controller;
+	
+	private ViewManager viewManager;
+	
+	public ViewManager getViewManager() {
+		return viewManager;
+	}
+
+	public void setViewManager(ViewManager viewManager) {
+		this.viewManager = viewManager;
+	}
 
 	public AutenticarClienteView _this() {
 		return this;

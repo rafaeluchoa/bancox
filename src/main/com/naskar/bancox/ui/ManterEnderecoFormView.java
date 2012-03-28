@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.naskar.bancox.domain.Agencia;
+import com.naskar.bancox.domain.Endereco;
 import com.naskar.infrastructure.ui.EntityFormView;
 import com.naskar.infrastructure.ui.EntityListView;
 import com.naskar.infrastructure.ui.ViewManager;
@@ -24,21 +24,21 @@ import com.vaadin.ui.VerticalLayout;
  */
 @Service
 @Scope("prototype")
-public class ManterAgenciaFormView implements EntityFormView<Agencia> {
+public class ManterEnderecoFormView implements EntityFormView<Endereco> {
 	
 	@Autowired
-	private ManterAgenciaController controller;
+	private ManterEnderecoController controller;
 	
-	private ManterAgenciaListView listView;
+	private ManterEnderecoListView listView;
 	
-	private Agencia entidade;
+	private Endereco entidade;
 	
 	private VerticalLayout form;
 
-	// agencia
-	private Label lbNome = new Label(); 
+	// Endereco
+	private Label lbLogradouro = new Label(); 
 	private Label lbId = new Label();
-	private TextField tfNome = new TextField();
+	private TextField tfLogradouro = new TextField();
 	private TextField tfNumero = new TextField();
 	
 	private ViewManager viewManager;
@@ -51,7 +51,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		this.viewManager = viewManager;
 	}
 
-	public ManterAgenciaFormView _this() {
+	public ManterEnderecoFormView view() {
 		return this;
 	}
 	
@@ -60,7 +60,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		form.setSpacing(true);
 		form.setMargin(true);
 		
-		form.addComponent(lbNome);
+		form.addComponent(lbLogradouro);
 		form.addComponent(crieFormulario());
 		form.addComponent(crieBotoes());
 	}
@@ -76,8 +76,8 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		grid.addComponent(lbId, 1, i);
 		
 		i++;
-		grid.addComponent(new Label("Nome:"), 0, i);
-		grid.addComponent(tfNome, 1, i);
+		grid.addComponent(new Label("Logradouro:"), 0, i);
+		grid.addComponent(tfLogradouro, 1, i);
 		
 		i++;
 		grid.addComponent(new Label("Número:"), 0, i);
@@ -96,7 +96,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.save(_this());
+				controller.save(view());
 			}
 		});
 		botoes.addComponent(salvar);
@@ -106,7 +106,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.cancel(_this());
+				controller.cancel(view());
 			}
 		});
 		botoes.addComponent(cancelar);
@@ -114,20 +114,20 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		return(botoes);
 	}
 	
-	public void setEntity(Agencia entidade) {
+	public void setEntity(Endereco entidade) {
 		
 		if(entidade == null) {
 			return;
 		}
 		
 		this.entidade = entidade;
-		lbNome.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Agência");
+		lbLogradouro.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Endereço");
 		
 		if(entidade.getId() != null) {
 			lbId.setValue(String.valueOf(entidade.getId()));
 		}
-		if(entidade.getNome() != null) {
-			tfNome.setValue(entidade.getNome());
+		if(entidade.getLogradouro() != null) {
+			tfLogradouro.setValue(entidade.getLogradouro());
 		}
 		if(entidade.getNumero() != null) {
 			tfNumero.setValue(entidade.getNumero());
@@ -135,14 +135,14 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 	}
 	
 	//TODO: verificar se essa logica precisa ficar aqui
-	public Agencia getEntity() {
-		Agencia retorno = entidade;
+	public Endereco getEntity() {
+		Endereco retorno = entidade;
 		
 		if(retorno == null) {
-			retorno = new Agencia();
+			retorno = new Endereco();
 		}
 		
-		retorno.setNome((String)tfNome.getValue());
+		retorno.setLogradouro((String)tfLogradouro.getValue());
 		retorno.setNumero((String)tfNumero.getValue());
 		
 		return retorno;
@@ -154,7 +154,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 
 	@Override
 	public void setEntityListView(EntityListView entityListView) {
-		listView = (ManterAgenciaListView) entityListView;
+		listView = (ManterEnderecoListView) entityListView;
 	}
 
 	@Override
@@ -164,7 +164,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 
 	@Override
 	public String getViewName() {
-		return (String)lbNome.getValue();
+		return (String)lbLogradouro.getValue();
 	}
 	
 

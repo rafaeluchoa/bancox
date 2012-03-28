@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.naskar.infrastructure.ui.View;
+import com.naskar.infrastructure.ui.ViewManager;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -25,6 +26,16 @@ public class ConsultarSaldoView implements View {
 	
 	@Autowired
 	private ConsultarSaldoController controller;
+	
+	private ViewManager viewManager;
+	
+	public ViewManager getViewManager() {
+		return viewManager;
+	}
+
+	public void setViewManager(ViewManager viewManager) {
+		this.viewManager = viewManager;
+	}
 	
 	public ConsultarSaldoView _this(){
 		return this;
@@ -52,7 +63,7 @@ public class ConsultarSaldoView implements View {
 				try {
 					controller.consultarSaldo(_this());
 				} catch(Exception e) {
-					controller.getViewManager().showError(e.getMessage());
+					getViewManager().showError(e.getMessage());
 				}
 			}
 			

@@ -7,9 +7,6 @@ import java.util.logging.Logger;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 
-import com.naskar.infrastructure.ui.Controller;
-
-
 public class ExceptionHandler {
 	
 	// resourceBundle com as mensagens por exception: Ex.: ApplicationException=Error: {0}
@@ -41,11 +38,13 @@ public class ExceptionHandler {
 			msg = raiz.getMessage();
 		}		
 		
+		/*
 		if(pjp.getTarget() instanceof Controller) {
 			((Controller)pjp.getTarget()).getViewManager().showError(msg);
 		} else {
 			throw new RuntimeException(msg, t);
 		}
+		*/
 		
 		// TODO: gerar numero de codigo de erro
 		logException(t, pjp, msg);
