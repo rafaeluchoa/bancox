@@ -54,7 +54,7 @@ public class ManterAgenciaListView implements EntityListView {
 		this.viewManager = viewManager;
 	}
 
-	public ManterAgenciaListView _this() {
+	public ManterAgenciaListView viewInstance() {
 		return this;
 	}
 	
@@ -83,7 +83,7 @@ public class ManterAgenciaListView implements EntityListView {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.showInsert(_this());
+				controller.showInsert(viewInstance());
 			}
 		});
 		botoes.addComponent(novo);
@@ -155,7 +155,7 @@ public class ManterAgenciaListView implements EntityListView {
 	@SuppressWarnings("unchecked")
 	private void editeSelecionado() {
 		Set<Agencia> selecao = (Set<Agencia>)table.getValue();
-		if(selecao.size() == 0 || selecao.size() > 1) {
+		if(selecao.isEmpty() || selecao.size() > 1) {
 			getViewManager().showWarn("Selecione uma linha para edição.");
 		} else {
 			Agencia entidade = (Agencia)selecao.iterator().next();

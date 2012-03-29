@@ -37,7 +37,7 @@ public class ConsultarSaldoView implements View {
 		this.viewManager = viewManager;
 	}
 	
-	public ConsultarSaldoView _this(){
+	public ConsultarSaldoView viewInstance(){
 		return this;
 		
 	}
@@ -61,7 +61,7 @@ public class ConsultarSaldoView implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				try {
-					controller.consultarSaldo(_this());
+					controller.consulteSaldo(viewInstance());
 				} catch(Exception e) {
 					getViewManager().showError(e.getMessage());
 				}

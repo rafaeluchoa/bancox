@@ -11,7 +11,7 @@ import com.naskar.bancox.service.vo.AbrirContaVO;
 
 
 public interface AbrirConta {
-	public ContaBancaria abraConta(AbrirContaVO vo);
+	ContaBancaria abraConta(AbrirContaVO vo);
 	
 	void setRepositorioContaBancaria(ContaBancariaRepository repositorio);
 	void setRepositorioPessoa(PessoaRepository repositorio);

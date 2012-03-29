@@ -31,8 +31,8 @@ public class ManterEnderecoListView implements EntityListView {
 	
 	//TODO: pegar de um properties
 	private static final String NOME = "Cadastro de Endereço";
-	private static final String[] C_Endereco = new String[] { "id", "logradouro", "numero" };
-	private static final String[] L_Endereco = new String[] { "Id", "Logradouro", "Número" };
+	private static final String[] C_ENDERECO = new String[] { "id", "logradouro", "numero" };
+	private static final String[] L_ENDERECO = new String[] { "Id", "Logradouro", "Número" };
 
 	// TODO: incluir form para ter campos de filtro, pesquisa
 	private VerticalLayout form;
@@ -123,8 +123,8 @@ public class ManterEnderecoListView implements EntityListView {
 	
 	private Table crieTabela() {
 		table.setContainerDataSource(container);
-		table.setVisibleColumns(C_Endereco);
-		table.setColumnHeaders(L_Endereco);
+		table.setVisibleColumns(C_ENDERECO);
+		table.setColumnHeaders(L_ENDERECO);
 		table.setWidth("650px");
 		
 		table.setPageLength(10);
@@ -155,7 +155,7 @@ public class ManterEnderecoListView implements EntityListView {
 	@SuppressWarnings("unchecked")
 	private void editeSelecionado() {
 		Set<Endereco> selecao = (Set<Endereco>)table.getValue();
-		if(selecao.size() == 0 || selecao.size() > 1) {
+		if(selecao.isEmpty() || selecao.size() > 1) {
 			getViewManager().showWarn("Selecione uma linha para edição.");
 		} else {
 			Endereco entidade = (Endereco)selecao.iterator().next();

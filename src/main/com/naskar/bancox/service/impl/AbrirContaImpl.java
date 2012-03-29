@@ -11,6 +11,8 @@ import com.naskar.bancox.domain.Agencia;
 import com.naskar.bancox.domain.Cliente;
 import com.naskar.bancox.domain.ContaBancaria;
 import com.naskar.bancox.domain.ContaCorrente;
+import com.naskar.bancox.domain.ContaPoupanca;
+import com.naskar.bancox.domain.ContaSalario;
 import com.naskar.bancox.domain.TipoContaBancaria;
 import com.naskar.bancox.repository.AgenciaRepository;
 import com.naskar.bancox.repository.ClienteRepository;
@@ -47,16 +49,6 @@ public class AbrirContaImpl implements AbrirConta {
 	@Override
 	public ContaBancaria abraConta(AbrirContaVO vo) {
 		
-		// RN1
-		/*
-		if(vo.getTipoContaBancaria() == TipoContaBancaria.SALARIO && !(vo.getPessoa() instanceof PessoaFisica)) {
-			throw new ContaSalarioParaPessoaNaoFisicaException();
-		}
-		*/
-		
-		// RN2
-		
-
 		pessoaRepository.insert(vo.getPessoa());
 		
 		ContaBancaria conta = null;
@@ -64,12 +56,12 @@ public class AbrirContaImpl implements AbrirConta {
 			conta = new ContaCorrente();
 		
 			
-//		} else if (vo.getTipoContaBancaria() == TipoContaBancaria.POUPANCA) {
-//			conta = new ContaPoupanca();
-//			
-//		} else if (vo.getTipoContaBancaria() == TipoContaBancaria.SALARIO) {
-//			conta = new ContaSalario();
-//			
+		} else if (vo.getTipoContaBancaria() == TipoContaBancaria.POUPANCA) {
+			conta = new ContaPoupanca();
+			
+		} else if (vo.getTipoContaBancaria() == TipoContaBancaria.SALARIO) {
+			conta = new ContaSalario();
+			
 		}
 		
 		Cliente cliente = new Cliente();

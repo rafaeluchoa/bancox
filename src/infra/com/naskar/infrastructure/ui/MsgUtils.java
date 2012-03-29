@@ -8,7 +8,9 @@ public class MsgUtils {
 	
 	public static Window getRootWindow(Component c) {
 		Window w = c.getWindow();
-		while(w.getParent() != null) w = (Window)w.getParent();
+		while(w.getParent() != null) {
+			w = (Window)w.getParent();
+		}
 		return w;
 	}
 	

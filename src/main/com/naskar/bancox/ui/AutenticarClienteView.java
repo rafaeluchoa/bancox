@@ -45,7 +45,7 @@ public class AutenticarClienteView implements View {
 		this.viewManager = viewManager;
 	}
 
-	public AutenticarClienteView _this() {
+	public AutenticarClienteView viewInstance() {
 		return this;
 	}
 
@@ -95,7 +95,7 @@ public class AutenticarClienteView implements View {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				controller.autenticar(_this());
+				controller.autenticar(viewInstance());
 			}
 		});
 		form.addComponent(new Label(""));

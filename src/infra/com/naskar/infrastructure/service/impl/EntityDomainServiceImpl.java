@@ -14,7 +14,7 @@ import com.naskar.infrastructure.utils.ReflectionUtils;
 /**
  * @author rafaeluchoa
  */
-public abstract class EntityDomainServiceImpl<E extends EntityDomain, R extends Repository<E>> 
+public class EntityDomainServiceImpl<E extends EntityDomain, R extends Repository<E>> 
 	implements InitializingBean {
 	
 	@Autowired
@@ -23,7 +23,7 @@ public abstract class EntityDomainServiceImpl<E extends EntityDomain, R extends 
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void afterPropertiesSet() throws Exception {
+	public void afterPropertiesSet() {
 		List<Class<?>> clazzes = 
 				ReflectionUtils.getTypeArguments(EntityDomainServiceImpl.class, getClass());
 		repository = repositoryFactory.createRepository((Class<Repository<E>>)clazzes.get(1));

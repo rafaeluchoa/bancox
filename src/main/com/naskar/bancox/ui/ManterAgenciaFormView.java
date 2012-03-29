@@ -51,7 +51,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		this.viewManager = viewManager;
 	}
 
-	public ManterAgenciaFormView _this() {
+	public ManterAgenciaFormView viewInstance() {
 		return this;
 	}
 	
@@ -96,7 +96,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.save(_this());
+				controller.save(viewInstance());
 			}
 		});
 		botoes.addComponent(salvar);
@@ -106,7 +106,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void componentEvent(Event event) {
-				controller.cancel(_this());
+				controller.cancel(viewInstance());
 			}
 		});
 		botoes.addComponent(cancelar);
@@ -121,7 +121,7 @@ public class ManterAgenciaFormView implements EntityFormView<Agencia> {
 		}
 		
 		this.entidade = entidade;
-		lbNome.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Agência");
+		lbNome.setValue((entidade.getId() == null ? "Novo" : "Edição") + " Agência");
 		
 		if(entidade.getId() != null) {
 			lbId.setValue(String.valueOf(entidade.getId()));

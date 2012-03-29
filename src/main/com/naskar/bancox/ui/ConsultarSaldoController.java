@@ -22,7 +22,7 @@ public class ConsultarSaldoController implements Controller {
 		return viewFactory.createView(ConsultarSaldoView.class);
 	}
 
-	public void consultarSaldo(ConsultarSaldoView view) {
+	public void consulteSaldo(ConsultarSaldoView view) {
 		float f = consultarSaldo.consultarSaldo(view.getNumeroConta());
 		view.setSaldo(String.valueOf(f));
 	}

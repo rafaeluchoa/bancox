@@ -11,6 +11,7 @@ import javax.persistence.criteria.Root;
 
 import com.naskar.infrastructure.domain.EntityDomain;
 import com.naskar.infrastructure.repository.Repository;
+import com.naskar.infrastructure.repository.RepositoryException;
 import com.naskar.infrastructure.utils.ReflectionUtils;
 
 
@@ -41,7 +42,7 @@ public class JPARepository<E extends EntityDomain> implements Repository<E> {
 			TypedQuery<E> typedQuery = entityManager.createQuery(query);
 			return typedQuery.getResultList();
 		} catch(Exception e) {
-			throw new RuntimeException(e);
+			throw new RepositoryException(e);
 		}
 	}
 

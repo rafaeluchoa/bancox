@@ -43,13 +43,6 @@ public class Cliente implements EntityDomain {
 	}
 	public void setContas(List<ContaBancaria> contas) {
 		this.contas = contas;
-		System.out.println("Obrigado!!");
-		System.exit(0);
 	}
 	
-	
-	
-	
-	
-
 }

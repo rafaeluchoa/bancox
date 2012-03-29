@@ -17,8 +17,7 @@ public class MemoryRepository<E extends EntityDomain> implements Repository<E> {
 
 	@Override
 	public List<E> findAll() {
-		List<E> retorno = new ArrayList<E>(lista);
-		return retorno;
+		return new ArrayList<E>(lista);
 	}
 
 	@Override

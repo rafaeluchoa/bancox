@@ -121,7 +121,7 @@ public class ManterEnderecoFormView implements EntityFormView<Endereco> {
 		}
 		
 		this.entidade = entidade;
-		lbLogradouro.setValue((entidade.getId() != null ? "Edição" : "Novo") + " Endereço");
+		lbLogradouro.setValue((entidade.getId() == null ? "Novo" : "Edição") + " Endereço");
 		
 		if(entidade.getId() != null) {
 			lbId.setValue(String.valueOf(entidade.getId()));

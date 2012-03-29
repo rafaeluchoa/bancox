@@ -16,6 +16,7 @@ import com.naskar.infrastructure.repository.impl.JPARepository;
 public class ContaBancariaRepositoryImpl extends JPARepository<ContaBancaria> implements ContaBancariaRepository {
 	
 	public ContaBancaria findByNumeroConta(String numero) {
+		ContaBancaria result = null;
 		try {
 			CriteriaBuilder qb = getEntityManager().getCriteriaBuilder();
 			
@@ -27,11 +28,11 @@ public class ContaBancariaRepositoryImpl extends JPARepository<ContaBancaria> im
 			query.select(contaBancaria);
 			query.where(qb.equal(contaBancaria.get("numero"), numero));
 	
-			ContaBancaria result = getEntityManager().createQuery(query).getSingleResult();
-			return result;
+			result = getEntityManager().createQuery(query).getSingleResult();
 		} catch(NoResultException nre) {
-			return null;
+			result = null;
 		}
+		return result;
 	}
 	
 }

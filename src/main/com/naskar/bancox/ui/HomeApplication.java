@@ -46,7 +46,7 @@ public class HomeApplication extends Application implements ViewManager {
 	private Window mainWindow = new Window("Banco X");
 	private TabSheet tabs = new TabSheet();
 	
-	public HomeApplication _this() {
+	public HomeApplication viewInstance() {
 		return this;
 	}
 
@@ -60,7 +60,7 @@ public class HomeApplication extends Application implements ViewManager {
 			public void buttonClick(ClickEvent event) {
 				
 				View view = controller.init();
-				view.setViewManager(_this());
+				view.setViewManager(viewInstance());
 				addView(view, nome);
 				
 			}

@@ -3,8 +3,6 @@ package com.naskar.infrastructure.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.naskar.infrastructure.domain.EntityDomain;
-
 
 /**
  * @author rafaeluchoa

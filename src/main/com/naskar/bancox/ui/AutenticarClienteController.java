@@ -29,7 +29,7 @@ public class AutenticarClienteController implements Controller {
 	}
 	
 	public void autenticar(AutenticarClienteView view) {
-		
+		// TODO: 
 	}
 	
 	public List<Integer[]> gerarTeclasAleatorias() {

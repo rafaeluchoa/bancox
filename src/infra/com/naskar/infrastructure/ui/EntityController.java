@@ -1,5 +1,6 @@
 package com.naskar.infrastructure.ui;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.naskar.infrastructure.domain.EntityDomain;
+import com.naskar.infrastructure.exception.ApplicationException;
 import com.naskar.infrastructure.service.EntityDomainService;
 import com.naskar.infrastructure.spring.BeanFactory;
 import com.naskar.infrastructure.utils.ReflectionUtils;
@@ -22,12 +24,14 @@ public class EntityController<
 	ListView extends EntityListView, 
 	FormView extends EntityFormView<E>,
 	EntityService extends EntityDomainService<E>>  
-	implements Controller, InitializingBean {
+	implements Controller, InitializingBean, Serializable {
 	
-	private Class<E> clazzE;
-	private Class<ListView> clazzListView;
-	private Class<FormView> clazzFormView;
-	private Class<EntityService> clazzServiceView;
+	private static final long serialVersionUID = 1L;
+	
+	private final Class<E> clazzE;
+	private final Class<ListView> clazzListView;
+	private final Class<FormView> clazzFormView;
+	private final Class<EntityService> clazzServiceView;
 	
 	private EntityService entityService;
 	
@@ -42,7 +46,7 @@ public class EntityController<
 	
 	@SuppressWarnings("unchecked")
 	public EntityController() {
-		List<Class<?>> clazzes = 
+		final List<Class<?>> clazzes = 
 			ReflectionUtils.getTypeArguments(EntityController.class, getClass());
 		clazzE = (Class<E>) clazzes.get(0);
 		clazzListView = (Class<ListView>) clazzes.get(1);
@@ -51,7 +55,7 @@ public class EntityController<
 	}
 	
 	@Override
-	public void afterPropertiesSet() throws Exception {
+	public void afterPropertiesSet() {
 		entityService = beanFactory.createBean(clazzServiceView);
 	}
 	
@@ -75,9 +79,9 @@ public class EntityController<
 		try {
 			showEdit(listView, clazzE.newInstance());
 		} catch (InstantiationException e) {
-			throw new RuntimeException(e);
+			throw new ApplicationException(e);
 		} catch (IllegalAccessException e) {
-			throw new RuntimeException(e);
+			throw new ApplicationException(e);
 		}
 	}
 

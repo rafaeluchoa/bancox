@@ -59,7 +59,9 @@ public class ExceptionHandler {
 	
 	private static Throwable getRaiz(Throwable ex) {
 		Throwable e = ex;
-		while(e.getCause() != null) e = (Throwable)e.getCause();
+		while(e.getCause() != null) {
+			e = (Throwable)e.getCause();
+		}
 		return e;
 	}
 

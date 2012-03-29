@@ -57,7 +57,7 @@ public class AbrirContaView implements View {
 
 	@Autowired
 	private AbrirContaController controller;
-	
+
 	private ViewManager viewManager;
 	
 	public ViewManager getViewManager() {
@@ -68,7 +68,7 @@ public class AbrirContaView implements View {
 		this.viewManager = viewManager;
 	}
 
-	public AbrirContaView _this() {
+	public AbrirContaView viewInstance() {
 		return this;
 	}
 
@@ -148,7 +148,7 @@ public class AbrirContaView implements View {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				controller.abraConta(_this());
+				controller.abraConta(viewInstance());
 				getViewManager().showMsg("Conta aberta com sucesso.");
 			}
 		});
@@ -200,11 +200,11 @@ public class AbrirContaView implements View {
 	}
 
 	public TipoPessoa getTipoPessoa() {
-		return (TipoPessoa.get((String)cbTipoPessoa.getValue()));
+		return TipoPessoa.get((String)cbTipoPessoa.getValue());
 	}
 
 	public TipoContaBancaria getTipoConta() {
-		return (TipoContaBancaria.get((String)cbTipoConta.getValue()));
+		return TipoContaBancaria.get((String)cbTipoConta.getValue());
 	}
 
 	public String getFisicaNome() {

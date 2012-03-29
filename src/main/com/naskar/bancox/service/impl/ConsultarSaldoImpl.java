@@ -18,7 +18,9 @@ public class ConsultarSaldoImpl implements ConsultarSaldo {
 	@Override
 	public Float consultarSaldo(String numeroConta) {
 		ContaBancaria conta = contaBancariaRepository.findByNumeroConta(numeroConta);
-		if(conta == null) throw new ApplicationException("Conta Bancaria não encontrada.");
+		if(conta == null) {
+			throw new ApplicationException("Conta Bancaria não encontrada.");
+		}
 		
 		return new Float(conta.getSaldo());
 	}

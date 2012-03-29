@@ -22,22 +22,20 @@ public class ReflectionUtils {
 	 */
 	@SuppressWarnings("rawtypes")
 	public static Class<?> getClass(Type type) {
+		Class<?> result = null;
 		if (type instanceof Class) {
-			return (Class) type;
+			result = (Class) type;
 		} else if (type instanceof ParameterizedType) {
-			return getClass(((ParameterizedType) type).getRawType());
+			result = getClass(((ParameterizedType) type).getRawType());
 		} else if (type instanceof GenericArrayType) {
 			Type componentType = ((GenericArrayType) type)
 					.getGenericComponentType();
 			Class<?> componentClass = getClass(componentType);
 			if (componentClass != null) {
-				return Array.newInstance(componentClass, 0).getClass();
-			} else {
-				return null;
+				result = Array.newInstance(componentClass, 0).getClass();
 			}
-		} else {
-			return null;
 		}
+		return result;
 	}
 
 	/**
