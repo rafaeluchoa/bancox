@@ -26,6 +26,7 @@ public class Cliente implements EntityDomain {
 	private Long id;
 	private Pessoa pessoa;
 	private List<ContaBancaria> contas = new ArrayList<ContaBancaria>();
+	
 	public Long getId() {
 		return id;
 	}

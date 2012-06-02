@@ -51,6 +51,7 @@ public class JPARepository<E extends EntityDomain> implements Repository<E> {
 		E oe = getEntityManager().merge(o);
 		entityManager.remove(oe);
 	}
+	
 
 	@Override
 	public E insert(E o) {

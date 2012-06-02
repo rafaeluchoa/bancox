@@ -27,6 +27,8 @@ import com.vaadin.ui.Window;
 @Service
 @Scope("prototype")
 public class HomeApplication extends Application implements ViewManager {
+	
+	private static final int QTDE_COLUNAS = 3;
 
 	@Autowired
 	private Controller abrirContaController;
