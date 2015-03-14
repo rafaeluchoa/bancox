@@ -1,0 +1,1 @@
+Controle Bancário usando eclipselink, vaadin e spring, usando os padrões MVC e alguns conceitos de DDD.
